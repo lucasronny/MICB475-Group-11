@@ -1,13 +1,9 @@
-#IP: 10.19.139.176
-ssh root@10.19.139.176
-#Password: Biome657
-
 
 ########### Coding for Parkinson Dataset #############
 
 #!/bin/bash
 
-#Must run using a manifest file for parkinson dataset
+#Parkinson dataset requires manifest file, also demultiplexes samples
 
 #QIIME import files using manifest file
 qiime tools import \
@@ -15,3 +11,6 @@ qiime tools import \
   --input-format SingleEndFastqManifestPhred33V2 \
   --input-path /mnt/datasets/project_2/parkinsons/parkinsons_manifest.txt \
   --output-path /data/parkinsons/demux_seqs.qza
+
+
+#NO demultiplexing step required

@@ -6,6 +6,7 @@ ssh root@10.19.139.176
 
 #QIIME import files
 qiime tools import \
-  --type EMPSingleEndSequences \
-  --input-path /mnt/datasets/project_2/parkinsons/seqs \
-  --output-path /data/parkinsons/emp-single-end-sequences.qza
+  --type "SampleData[SequencesWithQuality]" \
+  --input-format SingleEndFastqManifestPhred33V2 \
+  --input-path /mnt/datasets/project_2/parkinsons/parkinsons_manifest.txt \
+  --output-path /data/parkinsons/demux_seqs.qza

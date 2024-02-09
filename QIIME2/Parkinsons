@@ -1,1 +1,11 @@
+#IP: 10.19.139.176
+ssh root@10.19.139.176
+#Password: Biome657
 
+#Must run using a manifest file
+
+#QIIME import files
+qiime tools import \
+  --type EMPSingleEndSequences \
+  --input-path /mnt/datasets/project_2/parkinsons/seqs \
+  --output-path /data/parkinsons/emp-single-end-sequences.qza

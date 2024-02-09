@@ -6,3 +6,4 @@ Meeting notes Feb 8:
 
 For Thursday 15
   See if there's enough samples with NO PARKINSON & YES FARM
+  Paired end vs single end?

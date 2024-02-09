@@ -2,9 +2,14 @@
 ssh root@10.19.139.176
 #Password: Biome657
 
-#Must run using a manifest file
 
-#QIIME import files
+########### Coding for Parkinson Dataset #############
+
+#!/bin/bash
+
+#Must run using a manifest file for parkinson dataset
+
+#QIIME import files using manifest file
 qiime tools import \
   --type "SampleData[SequencesWithQuality]" \
   --input-format SingleEndFastqManifestPhred33V2 \

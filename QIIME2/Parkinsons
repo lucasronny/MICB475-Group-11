@@ -1,3 +1,4 @@
+# data from: https://movementdisorders.onlinelibrary.wiley.com/doi/full/10.1002/mds.28052?saml_referrer
 
 ########### Coding for Parkinson Dataset #############
 
@@ -12,5 +13,41 @@ qiime tools import \
   --input-path /mnt/datasets/project_2/parkinsons/parkinsons_manifest.txt \
   --output-path /data/parkinsons/demux_seqs.qza
 
+# Convert to .qzv for visualization
+qiime demux summarize \
+  --i-data demux_seqs.qza \
+  --o-visualization demux.qzv
+
 
 #NO demultiplexing step required
+
+#Denoising using DADA2
+qiime dada2 denoise-single \
+  --i-demultiplexed-seqs demux_seqs.qza \
+  --p-trim-left 0 \
+  --p-trunc-len 251 \
+  --o-representative-sequences rep-seqs.qza \
+  --o-table table.qza \
+  --o-denoising-stats stats.qza
+
+#Visualizing DADA2 outputs, converting to .qzv files for viewing on QIIME2 web viewer
+qiime metadata tabulate \
+  --m-input-file stats.qza \
+  --o-visualization stats.qzv
+
+qiime feature-table summarize \
+  --i-table table.qza \
+  --o-visualization table.qzv \
+  --m-sample-metadata-file parkinsons_metadata.txt
+  
+qiime feature-table tabulate-seqs \
+  --i-data rep-seqs.qza \
+  --o-visualization rep-seqs.qzv
+
+########
+
+
+
+
+
+

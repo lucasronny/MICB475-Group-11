@@ -1,0 +1,12 @@
+########### Coding for Colombia Dataset #############
+
+#!/bin/bash
+
+#Colombia dataset requires manifest file, also demultiplexes samples
+#importing demultiplexed sequences while in the directory: /home/qiime2/data/colombia
+#as a file named demux_seqs.qza
+qiime tools import \
+> --type "SampleData[SequencesWithQuality]" \
+> --input-format SingleEndFastqManifestPhred33V2 \
+> --input-path /mnt/datasets/project_2/colombia/colombia_manifest.txt \
+> --output-path ./demux_seqs.qza

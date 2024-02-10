@@ -30,7 +30,9 @@ qiime dada2 denoise-single \
   --o-table table.qza \
   --o-denoising-stats stats.qza
 
-#Visualizing DADA2 outputs, converting to .qzv files for viewing on QIIME2 web viewer
+
+
+####### Visualizing DADA2 outputs, converting to .qzv files for viewing on QIIME2 web viewer
 qiime metadata tabulate \
   --m-input-file stats.qza \
   --o-visualization stats.qzv
@@ -44,9 +46,59 @@ qiime feature-table tabulate-seqs \
   --i-data rep-seqs.qza \
   --o-visualization rep-seqs.qzv
 
-########
+######### Generating files for taxonomic analysis #############
+# Variable region V4 was amplified, thus can use the following Silva database: silva-138-99-515-806-nb-classifier.qza
+
+# Taxonomic analysis
+qiime feature-classifier classify-sklearn \
+  --i-classifier /mnt/datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+#For visualization of taxonomy file
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+  
+# Taxonomy barplots visualization
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file parkinsons_metadata.txt \
+  --o-visualization taxa-bar-plots.qzv
+
+#Filter out the chloroplast and mitochondria sequences
+qiime taxa filter-table \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --p-exclude mitochondria,chloroplast \
+  --o-filtered-table table-no-mitochondria-no-chloroplast.qza
+
+# Generate a tree for phylogenetic diversity analyses (rooted-tree.qza)
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned-rep-seqs.qza \
+  --o-masked-alignment masked-aligned-rep-seqs.qza \
+  --o-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza 
 
 
+######## Exporting .qza files into an export folder #########
+
+qiime tools export \
+  --input-path table.qza \
+  --output-path parkinsons_export 
+
+#convert feature-table.biom to .txt file
+biom convert -i feature-table.biom --to-tsv -o feature-table.txt
+
+qiime tools export \
+  --input-path rooted-tree.qza \
+  --output-path parkinsons_export  
+
+qiime tools export \
+  --input-path taxonomy.qza \
+  --output-path parkinsons_export  
 
 
 

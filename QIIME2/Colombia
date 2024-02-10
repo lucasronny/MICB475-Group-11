@@ -16,3 +16,6 @@ qiime tools import \
 qiime demux summarize \
 > --i-data demux_seqs.qza \
 > --o-visualization demux_seqs.qzv
+
+#using a Phred score of 30 as the threshold (99.9% base call accuracy) and looking at the interactiva quality plot,
+#we do not trim anything on the left, and trim at 230 bases on the right

@@ -17,5 +17,18 @@ qiime demux summarize \
 > --i-data demux_seqs.qza \
 > --o-visualization demux_seqs.qzv
 
-#using a Phred score of 30 as the threshold (99.9% base call accuracy) and looking at the interactiva quality plot,
+#using a Phred score of 30 as the threshold (99.9% base call accuracy) and looking at the interactive quality plot,
 #we do not trim anything on the left, and trim at 230 bases on the right
+
+#started working in a screen called qiime_colombia
+
+#determining ASVs using DADA2
+qiime dada2 denoise-single \
+  --i-demultiplexed-seqs demux_seqs.qza \
+  --p-trim-left 0 \
+  --p-trunc-len 230 \
+  --o-representative-sequences rep-seqs.qza \
+  --o-table table.qza \
+  --o-denoising-stats stats.qza
+
+###PERSONAL REMINDER TO GO BACK TO THE SCREEN (it's taking awhile)

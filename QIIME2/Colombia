@@ -11,4 +11,8 @@ qiime tools import \
 > --input-path /mnt/datasets/project_2/colombia/colombia_manifest.txt \
 > --output-path ./demux_seqs.qza
 
-###REMINDER TO CHECK IT ON THE QIIME WEBSITE (idk if it is single or paired end)
+#making a visualization file to view the interactive quality plot on the qiime2 view website
+#necessary for denoising step
+qiime demux summarize \
+> --i-data demux_seqs.qza \
+> --o-visualization demux_seqs.qzv

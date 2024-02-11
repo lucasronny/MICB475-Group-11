@@ -7,3 +7,7 @@ Meeting notes Feb 8:
 For Thursday 15
   See if there's enough samples with NO PARKINSON & YES FARM
   Paired end vs single end?
+
+  PARKINSONS:
+    Should I have filtered the mitochondria + chlorplast?
+    Was 251 a good cutoff for filtering (i.e the last base pair, ~25 quality score)?

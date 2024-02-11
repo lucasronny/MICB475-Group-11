@@ -53,16 +53,11 @@ qiime feature-table tabulate-seqs \
 ######### Generating files for taxonomic analysis #############
 # Variable region V4 was amplified, thus can use the following Silva database: silva-138-99-515-806-nb-classifier.qza
 
-# Taxonomic analysis
+# Taxonomic analysis if you don't have to train the classifier
 qiime feature-classifier classify-sklearn \
   --i-classifier /mnt/datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
   --i-reads rep-seqs.qza \
   --o-classification taxonomy.qza
-
-#For visualization of taxonomy file
-qiime metadata tabulate \
-  --m-input-file taxonomy.qza \
-  --o-visualization taxonomy.qzv
   
 # Taxonomy barplots visualization
 qiime taxa barplot \

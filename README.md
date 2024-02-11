@@ -9,14 +9,14 @@ For Thursday 15
   Paired end vs single end?
 
   PARKINSONS:
-    Should I have filtered the mitochondria + chlorplast?
+  Should I have filtered the mitochondria + chlorplast?
 
-    Was 251 a good cutoff for filtering (i.e the last base pair, ~25 quality score)?
+  Was 251 a good cutoff for filtering (i.e the last base pair, ~25 quality score)?
     
-    All the "NO DISEASE & FARM=YES" have 0 in constipation?
+  All the "NO DISEASE & FARM=YES" have 0 in constipation?
     
-    Help with rarefaction curve - should we cut 1 of the samples off? 
+  Help with rarefaction curve - should we cut 1 of the samples off? 
     
-    25 samples with YES-farm, NO-PD
+  25 samples with YES-farm, NO-PD
     
-    what now???
+  what now???

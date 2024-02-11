@@ -25,10 +25,11 @@ qiime demux summarize \
 qiime dada2 denoise-single \
   --i-demultiplexed-seqs demux_seqs.qza \
   --p-trim-left 0 \
-  --p-trunc-len 251 \
+  --p-trunc-len 251 \            #251 because of the 251 b.p read length, and high confidence  at the last base called
   --o-representative-sequences rep-seqs.qza \
   --o-table table.qza \
   --o-denoising-stats stats.qza
+
 
 
 
@@ -45,6 +46,9 @@ qiime feature-table summarize \
 qiime feature-table tabulate-seqs \
   --i-data rep-seqs.qza \
   --o-visualization rep-seqs.qzv
+
+
+
 
 ######### Generating files for taxonomic analysis #############
 # Variable region V4 was amplified, thus can use the following Silva database: silva-138-99-515-806-nb-classifier.qza
@@ -83,10 +87,12 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-rooted-tree rooted-tree.qza 
 
 
+
+
 ######## Exporting .qza files into an export folder #########
 
 qiime tools export \
-  --input-path table.qza \
+  --input-path table-no-mitochondria-no-chloroplast.qza \
   --output-path parkinsons_export 
 
 #convert feature-table.biom to .txt file

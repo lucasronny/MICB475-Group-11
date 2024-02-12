@@ -66,3 +66,18 @@ qiime taxa barplot \
   --i-taxonomy taxonomy.qza \
   --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
   --o-visualization taxa-bar-plots.qzv
+
+#from the taxonomy bar plot, we noticed that there were some mitochondrial data
+#so here we remove mitochondria and chloroplasts from the table file
+#and save it into table_v2.qza
+qiime taxa filter-table \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --p-exclude mitochondria,chloroplast \
+  --o-filtered-table table_v2.qza
+
+#visualizing the new, filtered table
+qiime feature-table summarize \
+  --i-table table_v2.qza \
+  --o-visualization table_v2.qzv \
+  --m-sample-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt

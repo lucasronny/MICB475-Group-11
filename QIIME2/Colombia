@@ -20,7 +20,7 @@ qiime demux summarize \
 #using a Phred score of 30 as the threshold (99.9% base call accuracy) and looking at the interactive quality plot,
 #we do not trim anything on the left, and trim at 230 bases on the right
 
-#started working in a screen called qiime_colombia
+###started working in a screen called qiime_colombia
 
 #determining ASVs using DADA2
 #AND denoising
@@ -81,3 +81,22 @@ qiime feature-table summarize \
   --i-table table_v2.qza \
   --o-visualization table_v2.qzv \
   --m-sample-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt
+###STILL RUNNING on qiime_colombia screen
+
+#generating a tree for phylogenetic diversity analyses
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned_rep_seqs.qza \
+  --o-masked-alignment masked_aligned_rep_seqs.qza \
+  --o-tree unrooted_tree.qza \
+  --o-rooted-tree rooted_tree.qza 
+
+###MADE NEW SCREEN for alpha-rarefaction graph, called rare_graph_colombia
+#making the alpha-rarefaction graph, which will be used to determine sampling depth
+qiime diversity alpha-rarefaction \
+  --i-table table_v2.qza \
+  --i-phylogeny rooted_tree.qza \
+  --p-max-depth 50000 \
+  --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
+  --o-visualization alpha_rarefaction_view.qzv
+###STILL RUNNING on rare_graph_colombia

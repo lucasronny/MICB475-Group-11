@@ -55,4 +55,7 @@ qiime feature-classifier classify-sklearn \
   --i-reads rep-seqs.qza \
   --o-classification taxonomy.qza
 
-#CHECK SCREEN (taking awhile)
+#visualizing taxonomy file
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv

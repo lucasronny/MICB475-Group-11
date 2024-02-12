@@ -59,3 +59,10 @@ qiime feature-classifier classify-sklearn \
 qiime metadata tabulate \
   --m-input-file taxonomy.qza \
   --o-visualization taxonomy.qzv
+
+#making and visualizing taxa bar plots
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
+  --o-visualization taxa-bar-plots.qzv

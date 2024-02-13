@@ -81,7 +81,6 @@ qiime feature-table summarize \
   --i-table table_v2.qza \
   --o-visualization table_v2.qzv \
   --m-sample-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt
-###ENDED UP NOT WORKING (will try agai if we need it)
 
 #generating a tree for phylogenetic diversity analyses
 qiime phylogeny align-to-tree-mafft-fasttree \
@@ -111,4 +110,5 @@ qiime diversity alpha-rarefaction \
   --p-max-depth 5000 \
   --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
   --o-visualization alpha_rarefaction_view_5000.qzv
-###IN A SCREEN called rare_graph_colombia
+
+###CHECK qiime2 view for table_v2.qzv and alpha_rarefaction_view_5000.qzv

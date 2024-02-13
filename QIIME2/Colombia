@@ -81,7 +81,7 @@ qiime feature-table summarize \
   --i-table table_v2.qza \
   --o-visualization table_v2.qzv \
   --m-sample-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt
-###STILL RUNNING on qiime_colombia screen
+###ENDED UP NOT WORKING (will try agai if we need it)
 
 #generating a tree for phylogenetic diversity analyses
 qiime phylogeny align-to-tree-mafft-fasttree \
@@ -91,12 +91,24 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-tree unrooted_tree.qza \
   --o-rooted-tree rooted_tree.qza 
 
-###MADE NEW SCREEN for alpha-rarefaction graph, called rare_graph_colombia
 #making the alpha-rarefaction graph, which will be used to determine sampling depth
+#using a max depth of 50000 (close to the max)
 qiime diversity alpha-rarefaction \
   --i-table table_v2.qza \
   --i-phylogeny rooted_tree.qza \
   --p-max-depth 50000 \
   --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
   --o-visualization alpha_rarefaction_view.qzv
-###STILL RUNNING on rare_graph_colombia
+###will NOT be using the alpha_rarefaction_view.qzv, max depth of 50000 ended up removing a lot of variables
+###but graph shows that the plateau (ASV saturation) likely happens at around 5000 samples
+###so a sampling depth of around 5000 may be used
+
+#making the alpha-rarefaction graph, but at max depth 5000
+#just to see the other varibales since they got cut off in the 50000 one
+qiime diversity alpha-rarefaction \
+  --i-table table_v2.qza \
+  --i-phylogeny rooted_tree.qza \
+  --p-max-depth 5000 \
+  --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
+  --o-visualization alpha_rarefaction_view_5000.qzv
+###IN A SCREEN called rare_graph_colombia

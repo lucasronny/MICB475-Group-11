@@ -26,3 +26,5 @@ some things that we might want to do as intermediate steps in our project (unles
 -check whether the beta diversity between farm and non-farm people is significantly different
 
 -possibly check alpha diversity of the farm people
+
+-indicator species analuysis for the farm people

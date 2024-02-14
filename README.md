@@ -20,3 +20,7 @@ For Thursday 15
   25 samples with YES-farm, NO-PD
     
   what now???
+
+some things that we might want to do as intermediate steps in our project (unless other papers already did it in which case we can just cite their data)
+-check whether the beta diversity between farm and non-farm people is significantly different
+-possibly check alpha diversity of the farm people

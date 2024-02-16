@@ -1,0 +1,28 @@
+pull out non-pd and remove NAs
+
+for validating: species present in farm population, and the relative abundance of these species
+Presence/absence, and abundance
+
+ALL diversity metrics (alpha and beta) for the 
+
+
+Send table.qzv and alpha rarefaction curve
+optimize cutoff alpha rarefaction from the table.qzv file on qiime visualizer
+
+alpha:
+richness
+faiths 
+shannon
+
+Beta:
+bray curtis
+jay 
+
+
+run significance on everything
+
+put figures on github
+
+to filter phyloseq object: look at modules, and find the "subset...."
+
+pool each city into each cohort so we don't check model for each person to person, rather looking at presence/absence and abundance for each city.

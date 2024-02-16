@@ -37,4 +37,4 @@ TO DO:
 
 -alpha (Faith's, Shannon's) and beta (Bray Curtis, Jaccard) diversity and include figures (can post figure on Github)
 
--organize Github
+-organize Github (dates, progress made)

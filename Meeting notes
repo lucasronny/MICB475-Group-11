@@ -19,6 +19,20 @@ bray curtis
 jay 
 
 
+### Meeting (Thursday, February 15):
+- some things that we might want to do as intermediate steps in our project (unless other papers already did it in which case we can just cite their data): 
+- check whether the beta diversity between farm and non-farm people is significantly different
+- possibly check alpha diversity of the farm people
+- indicator species analuysis for the farm people
+
+To do for the next meeting (Thursday, Febraury 29):
+- SEND TABLE.QZV FILES (before rarefaction)
+- make phyloseq object for Colombia (don't need to rarefy)
+
+- alpha (Faith's, Shannon's) and beta (Bray Curtis, Jaccard) diversity and include figures (can post figure on Github)
+
+- organize Github (dates, progress made)
+
 run significance on everything
 
 put figures on github

@@ -28,3 +28,6 @@ some things that we might want to do as intermediate steps in our project (unles
 -possibly check alpha diversity of the farm people
 
 -indicator species analuysis for the farm people
+
+word
+sentence

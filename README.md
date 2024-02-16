@@ -29,4 +29,8 @@ some things that we might want to do as intermediate steps in our project (unles
 
 -indicator species analuysis for the farm people
 
-SEND TABLE.QZV FILES (before rarefaction)
+TO DO:
+
+-SEND TABLE.QZV FILES (before rarefaction)
+
+-make phyloseq object for Colombia

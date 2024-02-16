@@ -1,42 +1,29 @@
-pull out non-pd and remove NAs
+# Meeting Minutes
 
-for validating: species present in farm population, and the relative abundance of these species
-Presence/absence, and abundance
-
-ALL diversity metrics (alpha and beta) for the 
-
-
-Send table.qzv and alpha rarefaction curve
-optimize cutoff alpha rarefaction from the table.qzv file on qiime visualizer
-
-alpha:
-richness
-faiths 
-shannon
-
-Beta:
-bray curtis
-jay 
-
+### Meeting notes (Feb 8):
+- decided on parkinson & columbia datasets to make a model for predicting the relationship between farm land and microbiome indicators.
+- for Thursday, February 15
+-   See if there's enough samples with NO PARKINSON & YES FARM
+-   Paired end vs single end?
 
 ### Meeting (Thursday, February 15):
 - some things that we might want to do as intermediate steps in our project (unless other papers already did it in which case we can just cite their data): 
 - check whether the beta diversity between farm and non-farm people is significantly different
 - possibly check alpha diversity of the farm people
 - indicator species analuysis for the farm people
+- for validating: species present in farm population, and the relative abundance of these species
+Presence/absence, and abundance
 
 To do for the next meeting (Thursday, Febraury 29):
-- SEND TABLE.QZV FILES (before rarefaction)
+- SEND TABLE.QZV FILES (before rarefaction) and the rarefaction curve with a proposed number for sampling depth
 - make phyloseq object for Colombia (don't need to rarefy)
-
-- alpha (Faith's, Shannon's) and beta (Bray Curtis, Jaccard) diversity and include figures (can post figure on Github)
-
+- pull out non-pd and remove NAs
+    - to filter phyloseq object: look at modules, and find the "subset...."
+- ALL diversity metrics (alpha and beta) PD dataset
+    - alpha: richness, faiths, shannon
+    - beta: bray curtis, jaccard
+    - include figures
+- run significance on everything
+- put figures on github
+- pool each city into each cohort so we don't check model for each person to person, rather looking at presence/absence and abundance for each city.
 - organize Github (dates, progress made)
-
-run significance on everything
-
-put figures on github
-
-to filter phyloseq object: look at modules, and find the "subset...."
-
-pool each city into each cohort so we don't check model for each person to person, rather looking at presence/absence and abundance for each city.

@@ -36,3 +36,5 @@ TO DO:
 -make phyloseq object for Colombia (don't need to rarefy)
 
 -alpha (Faith's, Shannon's) and beta (Bray Curtis, Jaccard) diversity and include figures (can post figure on Github)
+
+-organize Github

@@ -33,4 +33,4 @@ TO DO:
 
 -SEND TABLE.QZV FILES (before rarefaction)
 
--make phyloseq object for Colombia
+-make phyloseq object for Colombia (don't need to rarefy)

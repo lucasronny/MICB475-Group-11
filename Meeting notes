@@ -20,10 +20,10 @@ To do for the next meeting (Thursday, Febraury 29):
 - pull out non-pd and remove NAs
     - to filter phyloseq object: look at modules, and find the "subset...."
 - ALL diversity metrics (alpha and beta) PD dataset
-    - alpha: richness, faiths, shannon
-    - beta: bray curtis, jaccard
+    - alpha: richness, faiths, shannon, ....
+    - beta: bray curtis, jaccard, .... 
     - include figures
-- run significance on everything
+- run significance on everything (categorical variables??)
 - put figures on github
 - pool each city into each cohort so we don't check model for each person to person, rather looking at presence/absence and abundance for each city.
 - organize Github (dates, progress made)

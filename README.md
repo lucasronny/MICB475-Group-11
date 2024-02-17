@@ -1,13 +1,13 @@
 # MICB475-Group-11: Project 2
-A repository for documentation, coding scripts for our project.<br>For meeting minutes and agendas, see [Meeting notes](#notes/Meeting notes).
+A repository for documentation, coding scripts for our project.<br>For meeting minutes and agendas, see [Meeting notes](#notes/meeting-notes).
 
 ## Team
 Ekaterina Galysheva <br> Keegan McDonald <br> Alix Najera Mazariegos <br> Lucas Ronn Rönn <br> Leonardo Wu
 
 ## Table of Contents
-[Summary](https://github.com/lucasronny/MICB475-Group-11/edit/main/README.md#summary) <br>
-[Project Aims](#Project-Aims)<br>
-[Lab Notebook](#Lab-Notebook)<br>
+[Summary](#summary) <br>
+[Project Aims](#project-Aims)<br>
+[Lab Notebook](#lab-Notebook)<br>
 
 ## Summary
 The project aims to analyze the microbiome of healthy individuals living on a farm to create a predictive model for determining whether a test individual of unknown background lives on a farm or not. First, we will determine whether the microbiome diversity metrics are different between people living in an agricultral region compared to those that live in urban centers. Then we will select bugs that are differentially abundant in the individuals coming from agricultral communities to include in our predictive model. We will test the accuracy of our model by applying it to test subjects with known background. If successful, our model should predict, based on the richness and abudance of the microbiome, whether a test subject lives on a farm or not.

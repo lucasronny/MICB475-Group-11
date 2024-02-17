@@ -1,5 +1,5 @@
 # MICB475-Group-11: Project 2
-A repository for documentation, coding scripts for our project.<br>For meeting minutes and agendas, see [Meeting notes](notes/Meeting-notes).
+A repository for documentation, coding scripts for our project.<br>For meeting minutes and agendas, see [Meeting notes](#notes/Meeting notes).
 
 ## Team
 Ekaterina Galysheva <br> Keegan McDonald <br> Alix Najera Mazariegos <br> Lucas Ronn Rönn <br> Leonardo Wu

@@ -31,9 +31,16 @@ qiime dada2 denoise-single \
   --o-denoising-stats stats.qza
 
 
+#Filtering out the non-PD individuals to compare read depth rarefaction in qiime2 viewer
+qiime feature-table filter-samples \
+  --i-table table.qza \
+  --m-metadata-file parkinsons_metadata.txt \
+  --p-where "Disease='Control'" \
+  --o-filtered-table filtered_table.qza
 
 
-####### Visualizing DADA2 outputs, converting to .qzv files for viewing on QIIME2 web viewer
+
+####### Visualizing DADA2 outputs, converting to .qzv files for viewing on QIIME2 web viewer ###########
 qiime metadata tabulate \
   --m-input-file stats.qza \
   --o-visualization stats.qzv

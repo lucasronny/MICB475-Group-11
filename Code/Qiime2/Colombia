@@ -133,3 +133,6 @@ qiime tools export \
 qiime tools export \
   --input-path rooted_tree.qza \
   --output-path colombia_tree_export
+
+#exported the Colombia table, taxonomy, rooted, tree, and metadata files to my (Leo's) local computer
+#for further work in R (see "R stuff" on Github)

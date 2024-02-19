@@ -90,6 +90,9 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-tree unrooted_tree.qza \
   --o-rooted-tree rooted_tree.qza 
 
+##### WILL NOT BE RAREFYING COLOMBIA DATASET
+##### but will leave the rarefication code in for bookkeepping
+
 #making the alpha-rarefaction graph, which will be used to determine sampling depth
 #using a max depth of 50000 (close to the max)
 qiime diversity alpha-rarefaction \
@@ -111,4 +114,22 @@ qiime diversity alpha-rarefaction \
   --m-metadata-file /mnt/datasets/project_2/colombia/colombia_metadata.txt \
   --o-visualization alpha_rarefaction_view_5000.qzv
 
-###CHECK qiime2 view for table_v2.qzv and alpha_rarefaction_view_5000.qzv
+#exporting the table_v2 file for use in r
+qiime tools export \
+  --input-path table_v2.qza \
+  --output-path colombia_table_export
+
+biom convert \
+-i feature-table.biom \
+--to-tsv \
+-o feature-table.txt
+
+#exporting taxonomy file
+qiime tools export \
+  --input-path taxonomy.qza \
+  --output-path colombia_taxonomy_export
+
+#exporting rooted tree file
+qiime tools export \
+  --input-path rooted_tree.qza \
+  --output-path colombia_tree_export

@@ -32,7 +32,5 @@ To inquire in meeting:
 - All the "NO DISEASE & FARM=YES" have 0 in constipation?
 - Help with rarefaction curve - should we cut 1 of the samples off?
 - Further steps?
-- NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
-
-
 - organize Github (dates, progress made)
+- NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?

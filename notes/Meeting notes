@@ -15,11 +15,11 @@
 Presence/absence, and abundance
 
 To do for the next meeting (Thursday, Febraury 29):
-- SEND TABLE.QZV FILES (before rarefaction) and the rarefaction curve with a proposed number for sampling depth
+- SEND TABLE.QZV FILES (before rarefaction) and the rarefaction curve with a proposed number for sampling depth (completed)
 - make phyloseq object for Colombia (don't need to rarefy)
 - pull out non-pd and remove NAs
     - to filter phyloseq object: look at modules, and find the "subset...."
-- ALL diversity metrics (alpha and beta) PD dataset
+- ALL diversity metrics (alpha and beta) PD dataset (completed)
     - alpha: richness, faiths, shannon, ....
     - beta: bray curtis, jaccard, .... 
     - include figures
@@ -27,3 +27,10 @@ To do for the next meeting (Thursday, Febraury 29):
 - put figures on github
 - pool each city into each cohort so we don't check model for each person to person, rather looking at presence/absence and abundance for each city.
 - organize Github (dates, progress made)
+
+### Meeting (Thursday, February 22)
+- ran a- and b-diversity metrics on the filtered PD dataset (from now on, the Farm dataset)
+    - the generate PCoA plots show clustering of groups for different b-diversity measures
+- to test for significant differences in b-diversity measures, which test to use
+    - correlation?
+    - 2-tailed t-test?

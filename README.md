@@ -33,4 +33,4 @@ To inquire in meeting:
 - Help with rarefaction curve - should we cut 1 of the samples off?
 - Further steps?
 - organize Github (dates, progress made)
-- NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
+- I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?

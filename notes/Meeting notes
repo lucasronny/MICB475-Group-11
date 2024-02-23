@@ -34,3 +34,14 @@ To do for the next meeting (Thursday, Febraury 29):
 - to test for significant differences in b-diversity measures, which test to use
     - correlation?
     - 2-tailed t-test?
+
+Keegan Notes Feb 22:
+- Covered that our diversity metrics weren't ideal. Continue the proposal without this in mind.
+- Possible options: 
+    - Subset by gender and look for male:CHAO1
+    - Build rare species model?
+    - Pi-crust 2 functional model (predicted metabolic pathways)
+    - Switch initial dataset
+- Discussed other possible datasets we could switch to for improved diversity. > if found send to Evelyn
+- Rarefication only needed before diversity metrics. Do not rarefy for other analysis
+- We are no longer doing logistic regression model -> just taxonomic modeling comparing indicator list to taxa analysis

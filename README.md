@@ -1,5 +1,12 @@
 # MICB475-Group-11: Project 2
-A repository for documentation, coding scripts for our project.<br>For meeting minutes and agendas, see [Meeting notes](https://github.com/lucasronny/MICB475-Group-11/tree/3647d9e5b9e84cc3018353200aefe5036ffafb39/notes).
+A repository for documentation, coding scripts for our project.<br>
+
+### Upcoming Meeting Agenda (Feb/29/2024)
+- Item 1
+- Item 2
+- Item 3
+
+For meeting minutes, see [Meeting notes](https://github.com/lucasronny/MICB475-Group-11/tree/3647d9e5b9e84cc3018353200aefe5036ffafb39/notes).
 
 ## Team
 Ekaterina Galysheva <br> Keegan McDonald <br> Alix Najera Mazariegos <br> Lucas Rönn <br> Leonardo Wu

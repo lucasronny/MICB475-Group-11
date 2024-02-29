@@ -53,19 +53,19 @@ Procedure:
 Results:
 - only 3 core ASVs have been identified in the unexposed group, while 4 were identified in the exposed group
 - exposed group ASV taxonomic classification:
-|ASV code|Domain|Phylum|Class|Order|Family|Genus|Species|
-|--------|------|------|-----|-----|------|-----|-------|
-|d71fe67e73a45e78b36ab2586bb5dcc8|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
-|96c7cedbae877361d087a8b39206d408|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
-|eb1cb381c314ecbbf46265b2e2351ee8|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales|_Bacteroidaceae|Bacteroides|NA_|
-|76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales|_Bacteroidaceae|Bacteroides|Bacteroides_vulgatus_|
+|ASV code                        |Domain  |Phylum      |Class      |Order          |Family           |Genus             |Species               |
+|--------------------------------|--------|------------|-----------|---------------|-----------------|------------------|----------------------|
+|d71fe67e73a45e78b36ab2586bb5dcc8|Bacteria|Firmicutes  |Clostridia |Oscillospirales|_Ruminococcaceae_|_Faecalibacterium_|_NA_                  |
+|96c7cedbae877361d087a8b39206d408|Bacteria|Firmicutes  |Clostridia |Oscillospirales|_Ruminococcaceae_|_Faecalibacterium_|_NA_                  |
+|eb1cb381c314ecbbf46265b2e2351ee8|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales  |_Bacteroidaceae_ |_Bacteroides_     |_NA_                  |
+|76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales  |_Bacteroidaceae_ |_Bacteroides_     |_Bacteroides_vulgatus_|
 
 - unexposed group ASV taxonomic classification:
-|ASV code|Domain|Phylum|Class|Order|Family|Genus|Species|
-|--------|------|------|-----|-----|------|-----|-------|
-|d71fe67e73a45e78b36ab2586bb5dcc8|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
-|96c7cedbae877361d087a8b39206d408|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
-|76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales|_Bacteroidaceae|Bacteroides|Bacteroides_vulgatus_|
+|ASV code                        |Domain  |Phylum      |Class      |Order          |Family           |Genus             |Species               |
+|--------------------------------|--------|------------|-----------|---------------|-----------------|------------------|----------------------|
+|d71fe67e73a45e78b36ab2586bb5dcc8|Bacteria|Firmicutes  |Clostridia |Oscillospirales|_Ruminococcaceae_|_Faecalibacterium_|_NA_                  |
+|96c7cedbae877361d087a8b39206d408|Bacteria|Firmicutes  |Clostridia |Oscillospirales|_Ruminococcaceae_|_Faecalibacterium_|_NA_                  |
+|76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales  |_Bacteroidaceae_ |_Bacteroides_     |_Bacteroides_vulgatus_|
 
 - as a result of the taxonomic analysis, one ASV unique to the exposed group was identified. This ASV belongs to the genus _Bacteroides_. The taxonomic analysis could not identify the species to which this species belongs to.
 - _Bacteroides_ genus is commonly found in colon and has both positive and negative effects on overall health depending on their interactions with other microbes in the gut microbiome ([Zafar, 2023])(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7872030/).

@@ -80,3 +80,5 @@ Results:
 - Venn diagram generated for the core microbiome analysis
 <br>![Core Microbiome Analysis Venn Diagram](https:/Code/R_stuff/parkinsons/venn_core(r.ab_0.01,prev_0.5).png)
 
+### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 28, 2024:
+

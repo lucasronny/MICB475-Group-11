@@ -1,12 +1,6 @@
 # MICB475-Group-11: Project 2
 A repository for documentation, coding scripts for our project.<br>
-
-### Upcoming Meeting Agenda (Feb/29/2024)
-- Item 1
-- Item 2
-- Item 3
-
-For meeting minutes, see [Meeting notes](https://github.com/lucasronny/MICB475-Group-11/tree/3647d9e5b9e84cc3018353200aefe5036ffafb39/notes).
+For meeting minutes and agendas, see [Meeting notes](https://github.com/lucasronny/MICB475-Group-11/tree/3647d9e5b9e84cc3018353200aefe5036ffafb39/notes).
 
 ## Team
 Ekaterina Galysheva <br> Keegan McDonald <br> Alix Najera Mazariegos <br> Lucas Rönn <br> Leonardo Wu
@@ -40,4 +34,47 @@ To inquire in meeting:
 - Help with rarefaction curve - should we cut 1 of the samples off?
 - Further steps?
 - organize Github (dates, progress made)
-- I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
+- NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
+
+### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 28, 2024:
+
+Procedure:
+- load the phyloseq object containing the Parkinson's dataset filtered for only healhty patients
+- convert the frequencies in the OTU table
+- create vectors for all ASVs found in the samples that had been exposed to an agricultural setting and in those that had not been exposed
+- core microbiome analysis of either vector
+	- relative abundance threshold: 1% (only take the ASV if its relative abundance is higher than 1%; this filters out all the rare ASVs and retains all abundant and non-abundant ASVs)
+	- prevalence: 50% (only accept the ASV if it is found in over 50% of the samples)
+- subset a new table for both exposed and unexposed groups by isolating the ASVs found in the core microbiome analysis
+	- create 1 table per group
+- generate a barplot of ASVs identified in either group
+- generate a Venn diagram representing the unique and shared ASVs between groups
+
+Results:
+- only 3 core ASVs have been identified in the unexposed group, while 4 were identified in the exposed group
+- exposed group ASV taxonomic classification:
+|ASV code|Domain|Phylum|Class|Order|Family|Genus|Species|
+|--------|------|------|-----|-----|------|-----|-------|
+|d71fe67e73a45e78b36ab2586bb5dcc8|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
+|96c7cedbae877361d087a8b39206d408|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
+|eb1cb381c314ecbbf46265b2e2351ee8|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales|_Bacteroidaceae|Bacteroides|NA_|
+|76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales|_Bacteroidaceae|Bacteroides|Bacteroides_vulgatus_|
+
+- unexposed group ASV taxonomic classification:
+|ASV code|Domain|Phylum|Class|Order|Family|Genus|Species|
+|--------|------|------|-----|-----|------|-----|-------|
+|d71fe67e73a45e78b36ab2586bb5dcc8|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
+|96c7cedbae877361d087a8b39206d408|Bacteria|Firmicutes|Clostridia|Oscillospirales|_Ruminococcaceae|Faecalibacterium|NA_|
+|76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales|_Bacteroidaceae|Bacteroides|Bacteroides_vulgatus_|
+
+- as a result of the taxonomic analysis, one ASV unique to the exposed group was identified. This ASV belongs to the genus _Bacteroides_. The taxonomic analysis could not identify the species to which this species belongs to.
+- _Bacteroides_ genus is commonly found in colon and has both positive and negative effects on overall health depending on their interactions with other microbes in the gut microbiome ([Zafar, 2023])(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7872030/).
+
+- the bar plot of the distribution of the identified ASVS
+	- overall, the 2 ASVs show a higher relative abundance in the unexposed group
+	- there is higher variability of the _Bacteroides_ genus in both the exposed and unexposed groups compared to the _Faecalibacterium_
+![Core Microbiome Analysis](url)
+
+- Venn diagram generated for the core microbiome analysis
+![Core Microbiome Analysis Venn Diagram](url)
+

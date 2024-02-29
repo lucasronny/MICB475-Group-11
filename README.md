@@ -75,7 +75,7 @@ Results:
 - the bar plot of the distribution of the identified ASVS
 	- overall, the 2 ASVs show a higher relative abundance in the unexposed group
 	- there is higher variability of the _Bacteroides_ genus in both the exposed and unexposed groups compared to the _Faecalibacterium_
-<br>![Core Microbiome Analysis](https:/Code/R_stuff/parkinsons/core_ASVs_barplot(r.ab_0.01,prev_0.5).png)
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/core_ASVs_barplot(r.ab_0.01%2Cprev_0.5).png">
 
 - Venn diagram generated for the core microbiome analysis
 <br>![Core Microbiome Analysis Venn Diagram](https:/Code/R_stuff/parkinsons/venn_core(r.ab_0.01,prev_0.5).png)

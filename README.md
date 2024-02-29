@@ -70,13 +70,13 @@ Results:
 |76d6be90e19a660c9a84b35fa31d801c|Bacteria|Bacteroidota|Bacteroidia|Bacteroidales  |_Bacteroidaceae_ |_Bacteroides_     |_Bacteroides_vulgatus_|
 
 - as a result of the taxonomic analysis, one ASV unique to the exposed group was identified. This ASV belongs to the genus _Bacteroides_. The taxonomic analysis could not identify the species to which this species belongs to.
-- _Bacteroides_ genus is commonly found in colon and has both positive and negative effects on overall health depending on their interactions with other microbes in the gut microbiome ([Zafar, 2023])(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7872030/).
+- _Bacteroides_ genus is commonly found in colon and has both positive and negative effects on overall health depending on their interactions with other microbes in the gut microbiome [Zafar, 2023](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7872030/).
 
 - the bar plot of the distribution of the identified ASVS
 	- overall, the 2 ASVs show a higher relative abundance in the unexposed group
 	- there is higher variability of the _Bacteroides_ genus in both the exposed and unexposed groups compared to the _Faecalibacterium_
-<br>![Core Microbiome Analysis](url)
+<br>![Core Microbiome Analysis](https:/Code/R_stuff/parkinsons/core_ASVs_barplot(r.ab_0.01,prev_0.5).png)
 
 - Venn diagram generated for the core microbiome analysis
-<br>![Core Microbiome Analysis Venn Diagram](url)
+<br>![Core Microbiome Analysis Venn Diagram](https:/Code/R_stuff/parkinsons/venn_core(r.ab_0.01,prev_0.5).png)
 

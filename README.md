@@ -73,8 +73,8 @@ Results:
 - the bar plot of the distribution of the identified ASVS
 	- overall, the 2 ASVs show a higher relative abundance in the unexposed group
 	- there is higher variability of the _Bacteroides_ genus in both the exposed and unexposed groups compared to the _Faecalibacterium_
-![Core Microbiome Analysis](url)
+<br>![Core Microbiome Analysis](url)
 
 - Venn diagram generated for the core microbiome analysis
-![Core Microbiome Analysis Venn Diagram](url)
+<br>![Core Microbiome Analysis Venn Diagram](url)
 

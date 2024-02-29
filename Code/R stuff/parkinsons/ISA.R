@@ -32,3 +32,4 @@ isa_parkinsons$sign %>%
   rownames_to_column(var="ASV") %>%
   left_join(taxtable) %>%
   filter(p.value<0.05) %>% View()
+

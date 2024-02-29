@@ -80,5 +80,30 @@ Results:
 - Venn diagram generated for the core microbiome analysis
 <br>![Core Microbiome Analysis Venn Diagram](https:/Code/R_stuff/parkinsons/venn_core(r.ab_0.01,prev_0.5).png)
 
-### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 28, 2024:
+### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 29, 2024:
 
+Protocol:
+
+- packages required: tidyverse, phyloseq, indicspecies
+- load the non-rarefied phyloseq object for the Farm dataset
+- glom the tax table to Genus, make sure to include the NA rows
+- conver the frequences for the glommed Genus by transform_sample_counts()
+- use multipatt() to calculate indicator values for the dataset and cluster by the `Lived_on_farm` column
+- combine the selected ASVs with the data in the tax table
+	- assign the name "ASV" to the first column in the tax table
+	- filter for the rows with a p-value < 0.05
+
+Results:
+The following list of ASVs was generated in the ISA:
+
+|ASV code                        |Domain  |Phylum           |Class          |Order             |Family                     |Genus                   |Species               |Lived on farm?|Stat |p-value|
+|--------------------------------|--------|-----------------|---------------|------------------|---------------------------|------------------------|----------------------|--------------|-----|-------|
+|2fbf02f0d8043728d6e93f0bfa432d85|Bacteria|Actinobacteriota |Coriobacteriia |Coriobacteriales  |_Eggerthellaceae_          |_NA_                    |_NA_                  |Yes           |0.209|0.035  |
+|23667231b1722eb51bc7ccfaa5e5c38a|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Prevotellaceae_           |_Prevotellaceae_UCG-001_|_uncultured bacterium_|Yes           |0.233|0.010  |
+|898f2833fcd964a4cfae006e66bf10b6|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Barnesiellaceae_          |_NA_                    |_NA_                  |Yes           |0.184|0.040  |
+|455cd7d5df48c77aedb33f14590d1e78|Bacteria|Firmicutes       |Bacilli        |Erysipelotrichales|_NA_                       |_NA_                    |_NA_                  |Yes           |0.228|0.035  |
+|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes       |Bacilli        |Erysipelotrichales|_Erysipelatoclostridiaceae_|_Catenibacterium_       |_NA_                  |Yes           |0.329|0.045  |
+|b7fb7b8de1b4e013e7255cec428893a7|Bacteria|Verrucomicrobiota|Lentisphaeria  |Victivallales     |_Victivallaceae_           |_Victivallaceae_        |_uncultured rumen_    |Yes           |0.325|0.015  |
+
+- According to the literature, these ASVs are present abudantly in healthy human microbiome
+- None of the ASVs were identified to the Species level, but 3 Genera were identified: _Prevotllaceae_, Cotenibacterium_, and _Victivallaceae_

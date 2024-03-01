@@ -26,8 +26,8 @@ parkinsons_nofarm <- subset_samples(parkinsons_RA, `Lived_on_farm`=="No")
 # detection = 0 means that no matter how abundant it is within the group, include it
 # prevalence = 0.7 is HIGH - include only if present in over 70% samples
 
-farm_ASVs <- core_members(parkinsons_farm, detection=0.01, prevalence = 0.5)
-nofarm_ASVs <- core_members(parkinsons_nofarm, detection=0.01, prevalence = 0.5)
+farm_ASVs <- core_members(parkinsons_farm, detection=0, prevalence = 0.1)
+nofarm_ASVs <- core_members(parkinsons_nofarm, detection=0, prevalence = 0.1)
 
 
 # What are these ASVs? you can code it in two different ways to see the same things

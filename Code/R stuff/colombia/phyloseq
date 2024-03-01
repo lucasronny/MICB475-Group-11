@@ -41,3 +41,10 @@ class(TAX)
 #merge OTU, SAMP, TAX, and phylotree into a phyloseq object 
 #called colombia_phyloseq
 colombia_phyloseq <- phyloseq(OTU, SAMP, TAX, phylotree)
+
+#making 5 phyloseq objects, one for each city
+bogota <- subset_samples(colombia_phyloseq, city == "Bogota")
+medellin <- subset_samples(colombia_phyloseq, city == "Medellin")
+cali <- subset_samples(colombia_phyloseq, city == "Cali")
+barranquilla <- subset_samples(colombia_phyloseq, city == "Barranquilla")
+bucaramanga <- subset_samples(colombia_phyloseq, city == "Bucaramanga")

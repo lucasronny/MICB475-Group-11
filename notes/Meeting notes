@@ -45,3 +45,37 @@ Keegan Notes Feb 22:
 - Discussed other possible datasets we could switch to for improved diversity. > if found send to Evelyn
 - Rarefication only needed before diversity metrics. Do not rarefy for other analysis
 - We are no longer doing logistic regression model -> just taxonomic modeling comparing indicator list to taxa analysis
+
+Keegan Notes - Feb 29 2024
+- Core Microbiome Analysis Discussions
+    - Too little ASVs? Thresholds maybe too stringent? 
+    - Re-ran: Set Detection at 0 and prevalence at 0.1 - More promising numbers Farm: 47 No Farm: 16, shared: 264
+- Indicator Taxa
+    - Got a few which is good, pvalue show signficance. Stat number is 0.3 = not great inficator species
+    - Make it so all 6 found indicator species need to be present for our model?
+    - Fill in Taxa table -> fill in genus and keep species as ASVs.
+    - Re-ran: Glommed at species level - 21 indicators. Highest 0.4.
+- Still should pool by city
+    - Taxonomic analysis to look for them
+    - Relative abundance
+
+-To do:
+Table to reconsile overlapping new indicator species and core 47 Farm data. 
+    - Filter out/BLAST then with highest threshold stats (10-15 species) for next meeting.
+Next meeting - present what our table is -> figure out what we can do with Colombia dataset. 
+Leo - Create 5 new phyloseq objects - each one in for different cities. 
+
+Decide between 2 below:
+2 approaches -> 
+    - can do research paper (but poor model) lots of limitations to apply cross-country analysis OR 
+    - write methods paper (more technical) pipeline how to create models using our dataset as only an example
+        - Will change expectations compared to rest of class for final manuscript.
+        - Novelty is how we apply the model 
+
+
+
+
+
+
+
+

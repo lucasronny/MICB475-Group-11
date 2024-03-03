@@ -37,7 +37,8 @@ To inquire in meeting:
 - NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
 
 
-### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 28, 2024, EG:
+### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
+February 28, 2024, EG:
 
 Procedure:
 - load the phyloseq object containing the Parkinson's dataset filtered for only healhty patients
@@ -81,10 +82,11 @@ Results:
 - Venn diagram generated for the core microbiome analysis
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0.01%2Cprev_0.5).png" width = "675" height = "450">
 
-CONT [BELOW](#core-Microbiome-Analysis,-continued:-changing-parameters-to-increase-the-number-of-identified-core-microbiome-species-|-March-3,-2024,-EG:)
+CONT [BELOW](#core-Microbiome-Analysis,-continued)
 
 
-### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 29, 2024, EG:
+### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
+February 29, 2024, EG:
 
 Protocol:
 
@@ -116,7 +118,8 @@ The following list of ASVs was generated in the ISA:
 CONT BElOW
 
 
-### Core Microbiome Analysis, continued: changing parameters to increase the number of identified core microbiome species | March 3, 2024, EG:
+### Core Microbiome Analysis, continued
+Changing parameters to increase the number of identified core microbiome species | March 3, 2024, EG:
 
 BEGIN [ABOVE](#core-Microbiome-Analysis-of-the-Farm-dataset-(healhty-idividuals-from-the-Parkinson's-dataset)-|-February-28,-2024,-EG:)
 

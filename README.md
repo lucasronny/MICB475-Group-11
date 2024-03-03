@@ -36,6 +36,7 @@ To inquire in meeting:
 - organize Github (dates, progress made)
 - NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
 
+
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 28, 2024, EG:
 
 Procedure:
@@ -80,6 +81,9 @@ Results:
 - Venn diagram generated for the core microbiome analysis
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0.01%2Cprev_0.5).png" width = "675" height = "450">
 
+CONT [BELOW](#core-Microbiome-Analysis,-continued:-changing-parameters-to-increase-the-number-of-identified-core-microbiome-species-|-March-3,-2024,-EG:)
+
+
 ### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 29, 2024, EG:
 
 Protocol:
@@ -107,3 +111,30 @@ The following list of ASVs was generated in the ISA:
 
 - According to the literature, these ASVs are present abudantly in healthy human microbiome
 - None of the ASVs were identified to the Species level, but 3 Genera were identified: _Prevotllaceae_, Cotenibacterium_, and _Victivallaceae_
+- the Stat values are only considered meaningful when > 0.7. The highest Stat value in this analysis is 0.329 for the ASV in the _Catenibacterium_ genus
+
+CONT BElOW
+
+
+### Core Microbiome Analysis, continued: changing parameters to increase the number of identified core microbiome species | March 3, 2024, EG:
+
+BEGIN [ABOVE](#core-Microbiome-Analysis-of-the-Farm-dataset-(healhty-idividuals-from-the-Parkinson's-dataset)-|-February-28,-2024,-EG:)
+
+- to increase the number of species in the core mircobiome, make the detection and prevalence criteria less stringent
+	- set detection = 0, prevalence = 0.1
+
+Results:
+- there are 311 species in the exposed group's core microbiome, and 280 species in the unexposed group's core microbiome 
+- bar graph plot generated:
+
+### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 29, 2024, EG:
+
+- only 6 ASVs were identified as indictor species; these are too few for downstream analysis
+- addtionally, the Stat values for these ASVs were below, which is considered a ________________
+
+Protocol:
+- perform the same analysis, but glom by species
+- any ASVs that could not be identified up to the species level, use the table.qzv file generated in QIIME2 analysis of the dataset to blast these ASVs manually and fill in the table
+
+Results:
+- 19 indicator species were identified

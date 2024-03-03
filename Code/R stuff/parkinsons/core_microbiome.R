@@ -40,9 +40,12 @@ tax_table(prune_taxa(nofarm_ASVs,phylobj))
 barplot <- prune_taxa(farm_ASVs,phylobj) %>% 
   plot_bar(fill="Genus") + 
   facet_wrap(.~`Lived_on_farm`, scales ="free") +
-  labs (x = "Samples, Environemtal Exposure", y = "Relative Abundance")
+  labs (x = "Samples (grouped by agricultural exposure)", y = "Relative Abundance") + 
+  theme(legend.key.width = unit(1, "cm")) +
+  guides(fill = guide_legend(keywidth = 0.5, keyheight = 1, ncol = 3))
+barplot
 
-ggsave("core_ASVs_barplot(r.ab_0.01,prev_0.5).png", barplot, width = 20, height = 8)
+ggsave("core_ASVs_barplot(r.ab_0,prev_0.1).png", barplot, width = 20, height = 8)
 
 # Notice that in this dataset, there are very few CORE microbiome members. This is common
 

@@ -29,10 +29,11 @@ summary(isa_parkinsons)
 taxtable <- tax_table(phylobj) %>% as.data.frame() %>% rownames_to_column(var="ASV")
 view(taxtable)
 
-# consider that your table is only going to be resolved up to the genus level, be wary of 
-# anything beyond the glomed taxa level
-isa_parkinsons$sign %>%
+# consider that your table is only going to be resolved up to the species level
+isa_frame <- isa_parkinsons$sign %>%
   rownames_to_column(var="ASV") %>%
   left_join(taxtable) %>%
-  filter(p.value<0.05) %>% View()
+  filter(p.value<0.05) %>% View() %>%
+  save(file = "isa_frame.RData") %>%
+  write.csv("isa_frame.csv", row.names = FALSE)
 

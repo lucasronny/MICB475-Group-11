@@ -82,7 +82,7 @@ Results:
 - Venn diagram generated for the core microbiome analysis
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0.01%2Cprev_0.5).png" width = "675" height = "450">
 
-CONT [BELOW](#core-Microbiome-Analysis,-continued)
+continued below: [Core Microbiome Analysis, continued](#Core-Microbiome-Analysis,-continued)
 
 
 ### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
@@ -115,13 +115,11 @@ The following list of ASVs was generated in the ISA:
 - None of the ASVs were identified to the Species level, but 3 Genera were identified: _Prevotllaceae_, Cotenibacterium_, and _Victivallaceae_
 - the Stat values are only considered meaningful when > 0.7. The highest Stat value in this analysis is 0.329 for the ASV in the _Catenibacterium_ genus
 
-CONT BElOW
-
+continued below: [Indicator Species Analysis of the Farm dataset](#Indicator-species-analysis-of-the-farm-dataset)
 
 ### Core Microbiome Analysis, continued
-Changing parameters to increase the number of identified core microbiome species | March 3, 2024, EG:
-
-BEGIN [ABOVE](#core-Microbiome-Analysis-of-the-Farm-dataset-(healhty-idividuals-from-the-Parkinson's-dataset)-|-February-28,-2024,-EG:)
+Changing parameters to increase the number of identified core microbiome species
+March 3, 2024, EG:
 
 - to increase the number of species in the core mircobiome, make the detection and prevalence criteria less stringent
 	- set detection = 0, prevalence = 0.1
@@ -129,8 +127,10 @@ BEGIN [ABOVE](#core-Microbiome-Analysis-of-the-Farm-dataset-(healhty-idividuals-
 Results:
 - there are 311 species in the exposed group's core microbiome, and 280 species in the unexposed group's core microbiome 
 - bar graph plot generated:
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0%2Cprev_0.1).png" width = "675" height = "450">
 
-### Indicator Species Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset) | February 29, 2024, EG:
+### Indicator Species Analysis of the Farm dataset
+February 29, EG
 
 - only 6 ASVs were identified as indictor species; these are too few for downstream analysis
 - addtionally, the Stat values for these ASVs were below, which is considered a ________________

@@ -79,10 +79,10 @@ Results:
 - the bar plot of the distribution of the identified ASVS
 	- overall, the 2 ASVs show a higher relative abundance in the unexposed group
 	- there is higher variability of the _Bacteroides_ genus in both the exposed and unexposed groups compared to the _Faecalibacterium_
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/core_ASVs_barplot(r.ab_0.01%2Cprev_0.5).png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/core_ASVs_barplot(r.ab_0.01%2Cprev_0.5).png">
 
 - Venn diagram generated for the core microbiome analysis
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0.01%2Cprev_0.5).png" width = "675" height = "450">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/venn_core(r.ab_0.01%2Cprev_0.5).png">
 
 continued below: [Core Microbiome Analysis, continued](#Core-Microbiome-Analysis,-continued)
 
@@ -133,7 +133,11 @@ March 3, 2024, EG:
 Results:
 - there are 311 species in the exposed group's core microbiome, and 280 species in the unexposed group's core microbiome 
 - bar graph plot generated:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0%2Cprev_0.1).png" width = "675" height = "450">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/core_ASVs_barplot(r.ab_0%2Cprev_0.1).png">
+- there are more ASVs included in the current analysis because the parameters are less stringent
+
+- and the Venn diagram
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/venn_core(r.ab_0%2Cprev_0.1).png">
 
 ### Indicator Species Analysis, continued
 February 29, EG
@@ -143,17 +147,18 @@ February 29, EG
 
 Protocol:
 - perform the same analysis, but glom by species
-- any ASVs that could not be identified up to the species level, use the table.qzv file generated in QIIME2 analysis of the dataset to blast these ASVs manually and fill in the table
+- subset ASVs with IV>0.2 and p<0.05
+- blast the species selected using the NIH BLAST&reg; tool
 
 Results:
 - 19 indicator species were identified
-- see this table for the list of ASVs and their taxonomic classification
+- see this file for tables listing the taxonomic classification of ASVs performed using the representative sequences in QIIME2 and NIH BLAST &reg; tool classification
 
 ### Core Microbiome and Indicator Species Analysis
 March 4, EG:
 
 Purpose: <br>
-The core microbiome indicator species analyses have been performed. To generate the predictive taxonomic model, we will combine the species identified 
+The core microbiome indicator species analyses have been performed to the necessary level of stringency. To generate the predictive taxonomic model, we will combine the species identified 
 
 Procedure:
 - tables containing the core microbiome species and indicator species for the farm-exposed group were joined using the inner_join() function, basing the join on the ASV column in either table (see code here)
@@ -171,4 +176,8 @@ Results:
 - all ASVs were identified down to the species level, except for the species belonging to the _Lachnospiraceae_ family
 
 Conclusion: 
-- 3 species is a very low number to base a predictive model on
+- the common species are very few
+- additionally, the IV are low (IV<0.42), indicating that the species identified are not unique to the farm group
+	- note that all the ubiquotous species (i.e., common to both groups) are excluded by the _p_-value threshold
+
+

@@ -40,6 +40,8 @@ To inquire in meeting:
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
 February 28, 2024, EG:
 
+Purpose: <br> Having selected all the healthy individuals in the Parkinson's dataset, we can now proceed to create a list of species characteristic of the mcirobiota of individuals that have been exposed to an agricultural environment (in our case, a farm). One of the analysis we decided to perform is the core microbiome analysis, which allows to determine the shared and unique species between selected groups of samples. The analysis will be performed in R using the microbiome package. <br> A high number of shared species will indicate that the individuals in the exposed and unexposed groups have a similar gut microbiome composition, whereas a diffirence between the 2 groups would be indicated by a low number of shared species. The group with a higer \u03B1-diversity will have a higher number of unique species compared to the other group. This will enable us to qualitatively assess the extent of similarity and divergence between the 2 groups. <br> Downstream, we will perform indicator species analysis, determine which ASVs are common between the indicator species and the species present uniquely in exposed individuals. This will comprise the basis of the predictive taxonomic model.
+
 Procedure:
 - load the phyloseq object containing the Parkinson's dataset filtered for only healhty patients
 - convert the frequencies in the OTU table
@@ -102,18 +104,22 @@ Protocol:
 Results:
 The following list of ASVs was generated in the ISA:
 
-|ASV code                        |Domain  |Phylum           |Class          |Order             |Family                     |Genus                   |Species               |Lived on farm?|Stat |p-value|
-|--------------------------------|--------|-----------------|---------------|------------------|---------------------------|------------------------|----------------------|--------------|-----|-------|
-|2fbf02f0d8043728d6e93f0bfa432d85|Bacteria|Actinobacteriota |Coriobacteriia |Coriobacteriales  |_Eggerthellaceae_          |_NA_                    |_NA_                  |Yes           |0.209|0.035  |
-|23667231b1722eb51bc7ccfaa5e5c38a|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Prevotellaceae_           |_Prevotellaceae_UCG-001_|_uncultured bacterium_|Yes           |0.233|0.010  |
-|898f2833fcd964a4cfae006e66bf10b6|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Barnesiellaceae_          |_NA_                    |_NA_                  |Yes           |0.184|0.040  |
-|455cd7d5df48c77aedb33f14590d1e78|Bacteria|Firmicutes       |Bacilli        |Erysipelotrichales|_NA_                       |_NA_                    |_NA_                  |Yes           |0.228|0.035  |
-|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes       |Bacilli        |Erysipelotrichales|_Erysipelatoclostridiaceae_|_Catenibacterium_       |_NA_                  |Yes           |0.329|0.045  |
-|b7fb7b8de1b4e013e7255cec428893a7|Bacteria|Verrucomicrobiota|Lentisphaeria  |Victivallales     |_Victivallaceae_           |_Victivallaceae_        |_uncultured rumen_    |Yes           |0.325|0.015  |
+|ASV code                        |Domain  |Phylum           |Class          |Order             |Family                     |Genus                   |Species               |Lived on farm?|Indicator value (IV)|_p_    |
+|--------------------------------|--------|-----------------|---------------|------------------|---------------------------|------------------------|----------------------|--------------|--------------------|-------|
+|2fbf02f0d8043728d6e93f0bfa432d85|Bacteria|Actinobacteriota |Coriobacteriia |Coriobacteriales  |_Eggerthellaceae_          |_NA_                    |_NA_                  |Yes           |0.209               |0.035  |
+|23667231b1722eb51bc7ccfaa5e5c38a|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Prevotellaceae_           |_Prevotellaceae_UCG-001_|_uncultured bacterium_|Yes           |0.233               |0.010  |
+|898f2833fcd964a4cfae006e66bf10b6|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Barnesiellaceae_          |_NA_                    |_NA_                  |Yes           |0.184               |0.040  |
+|455cd7d5df48c77aedb33f14590d1e78|Bacteria|Firmicutes       |Bacilli        |Erysipelotrichales|_NA_                       |_NA_                    |_NA_                  |Yes           |0.228               |0.035  |
+|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes       |Bacilli        |Erysipelotrichales|_Erysipelatoclostridiaceae_|_Catenibacterium_       |_NA_                  |Yes           |0.329               |0.045  |
+|b7fb7b8de1b4e013e7255cec428893a7|Bacteria|Verrucomicrobiota|Lentisphaeria  |Victivallales     |_Victivallaceae_           |_Victivallaceae_        |_uncultured rumen_    |Yes           |0.325               |0.015  |
 
 - According to the literature, these ASVs are present abudantly in healthy human microbiome
 - None of the ASVs were identified to the Species level, but 3 Genera were identified: _Prevotllaceae_, Cotenibacterium_, and _Victivallaceae_
-- the Stat values are only considered meaningful when > 0.7. The highest Stat value in this analysis is 0.329 for the ASV in the _Catenibacterium_ genus
+- Indicator values indicate how strongly an ASV is associated with a group (here, with the farm group)
+		- IV = 100 x relative abundance x relative frequency
+				- relative abundance: how many individuals in the group have the ASV
+				- relative frequency: **proportion of sites in the group that have the individual**
+		- values are only considered meaningful when > 0.7. The highest IV in this analysis is 0.329 for the ASV in the _Catenibacterium_ genus
 
 continued below: [Indicator Species Analysis, continued](#Indicator-species-analysis.+continued)
 
@@ -143,13 +149,26 @@ Results:
 - 19 indicator species were identified
 - see this table for the list of ASVs and their taxonomic classification
 
-  ### Core Microbiome and Indicator Species Analysis
-  March 4, EG:
-  - tables containing the core microbiome species and indicator species for the farm-exposed group were joined using the inner_join() function, basing the join on the ASV column in either table (see code here)
-  - there were 3 species in common betwen the 2 tables:
+### Core Microbiome and Indicator Species Analysis
+March 4, EG:
 
-|ASV code                        |Domain  |Phylum           |Class          |Order             |Family                     |Genus                   |Species               |Lived on farm?|Stat |p-value|
-|--------------------------------|--------|-----------------|---------------|------------------|---------------------------|------------------------|----------------------|--------------|-----|-------|
-|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes       |Firmicutes     |Erysipelotrichales|_Erysipelaclostridiaceae_  |_NA_                    |_NA_                  |Yes           |0.209|0.035  |
-|bfab02a86c5187ed451db10d9b81b8d5|Bacteria|Firmicutes       |Clostridia     |Lachnospirales    |_Lachnospiraceae_          |_Prevotellaceae_UCG-001_|_uncultured bacterium_|Yes           |0.233|0.010  |
-|3f9fcc47fb363e0fdfa75dc56bb107f5|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Tannerellaceae_           |_NA_                    |_NA_                  |Yes           |0.184|0.040  |
+Purpose: <br>
+The core microbiome indicator species analyses have been performed. To generate the predictive taxonomic model, we will combine the species identified 
+
+Procedure:
+- tables containing the core microbiome species and indicator species for the farm-exposed group were joined using the inner_join() function, basing the join on the ASV column in either table (see code here)
+
+Results:
+- there were 3 species in common betwen the 2 tables:
+
+|ASV code                        |Domain  |Phylum           |Class           |Order             |Family            |Genus                         |Species                    |Lived on farm?|Indicator value (IV)|_p_    |
+|--------------------------------|--------|-----------------|----------------|------------------|------------------|------------------------------|---------------------------|--------------|--------------------|-------|
+|bfab02a86c5187ed451db10d9b81b8d5|Bacteria|Firmicutes       |Clostridia      |Lachnospirales    |_Lachnospiraceae_ |_Eubacterium ventriosum group_|_uncultured bacterium_     |Yes           |0.420               |0.005  |
+|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Bacillota        |Erysipelotrichia|Erysipelotrichales|_Coprobacillaceae_|_Catenibacterium_             |_Catenibacterium misuokai_ |Yes           |0.327               |0.015  |
+|3f9fcc47fb363e0fdfa75dc56bb107f5|Bacteria|Bacteroidota     |Bacteroidia     |Bacteroidales     |_Tannerellaceae_  |_Parabacteroides_             |_Parabacteroides johnsonii_|Yes           |0.303               |0.030  |
+
+- all the sequences were blasted using the NIH BLAST&reg; tool
+- all ASVs were identified down to the species level, except for the species belonging to the _Lachnospiraceae_ family
+
+Conclusion: 
+- 3 species is a very low number to base a predictive model on

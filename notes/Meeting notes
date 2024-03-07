@@ -72,6 +72,11 @@ Decide between 2 below:
         - Will change expectations compared to rest of class for final manuscript.
         - Novelty is how we apply the model 
 
+March 7:
+Only 3 species in common between the ISA and ASVs in the exposed group
+12 indicator species identified when setting IV>0.2 and p<0.05 (all blasted, see ISA_BLAST table in Code/parkinsons)
+    - IV threshold selected arbitrarily
+
 
 
 

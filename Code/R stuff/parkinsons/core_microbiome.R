@@ -49,11 +49,6 @@ barplot
 
 ggsave("core_ASVs_barplot(r.ab_0,prev_0.1).png", barplot, width = 20, height = 8)
 
-# Notice that in this dataset, there are very few CORE microbiome members. This is common
-
-
-### What if we wanted to make a Venn diagram of all the ASVs that showed up in each treatment?
-
 # combine the vectors above into a list for ease of coding later on
 exposure_list_core <- list(Farm = farm_ASVs, No_Farm = nofarm_ASVs)
 
@@ -62,6 +57,25 @@ core_venn <- ggVennDiagram(x = exposure_list_core) + coord_flip()
 
 ggsave("venn_core(r.ab_0,prev_0.1).png", core_venn, height = 7, width = 10)
 
+
+
+#### Subset all species that are unique to just the farm dataset ####
+
+#conver the taxonomy table to a dataframe and transfer ASVs from the indexing column into a legitimate column and name it ASV
+farm_ASV_core_df <- as.data.frame(farm_ASV_core)
+view(farm_ASV_core_df)
+farm_ASV_core_df <- rownames_to_column(farm_ASV_core_df, var = "row_names")
+names(farm_ASV_core_df)[1] <- "ASV"
+
+nofarm_ASVs_remove <- c(nofarm_ASVs)
+
+for (r in 1:nrow(farm_ASV_core_df)) {
+  farm_ASV_unique_df <- farm_ASV_core_df %>%
+    filter(!ASV %in% nofarm_ASVs_remove)
+}
+view(farm_ASV_unique_df)
+
+save(farm_ASV_unique_df, file = "farm_ASV_unique_df.RData")
 
 # Create a Venn diagram of all species
 farm_list <- core_members(parkinsons_farm, detection=0.001, prevalence = 0.10)

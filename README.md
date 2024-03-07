@@ -164,9 +164,10 @@ The core microbiome indicator species analyses have been performed to the necess
 
 Procedure:
 - tables containing the core microbiome species and indicator species for the farm-exposed group were joined using the inner_join() function, basing the join on the ASV column in either table (see code here)
+- the same operations were performed for the indicator species and the core microbiome members unique to the exposed group
 
 Results:
-- there were 3 species in common betwen the 2 tables:
+- there were 3 species in common betwen the total ASVs belonging to the exposed group and the indicator species:
 
 |ASV code                        |Domain  |Phylum           |Class           |Order             |Family            |Genus                         |Species                    |Lived on farm?|Indicator value (IV)|_p_    |
 |--------------------------------|--------|-----------------|----------------|------------------|------------------|------------------------------|---------------------------|--------------|--------------------|-------|
@@ -176,6 +177,7 @@ Results:
 
 - all the sequences were blasted using the NIH BLAST&reg; tool
 - all ASVs were identified down to the species level, except for the species belonging to the _Lachnospiraceae_ family
+- additionally the uncultured bacterium ASV and _Parabacteroides johnsonii_ were in common between the unique core microbiome species in the exposed group and the indicator species
 
 Conclusion: 
 - the common species are very few

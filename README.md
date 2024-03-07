@@ -115,7 +115,7 @@ The following list of ASVs was generated in the ISA:
 - None of the ASVs were identified to the Species level, but 3 Genera were identified: _Prevotllaceae_, Cotenibacterium_, and _Victivallaceae_
 - the Stat values are only considered meaningful when > 0.7. The highest Stat value in this analysis is 0.329 for the ASV in the _Catenibacterium_ genus
 
-continued below: [Indicator Species Analysis of the Farm dataset](#Indicator-species-analysis-of-the-farm-dataset)
+continued below: [Indicator Species Analysis, continued](#Indicator-species-analysis.+continued)
 
 ### Core Microbiome Analysis, continued
 Changing parameters to increase the number of identified core microbiome species
@@ -129,11 +129,11 @@ Results:
 - bar graph plot generated:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/R%20stuff/parkinsons/venn_core(r.ab_0%2Cprev_0.1).png" width = "675" height = "450">
 
-### Indicator Species Analysis of the Farm dataset
+### Indicator Species Analysis, continued
 February 29, EG
 
 - only 6 ASVs were identified as indictor species; these are too few for downstream analysis
-- addtionally, the Stat values for these ASVs were below, which is considered a ________________
+- addtionally, the Stat values for these ASVs were below 0.7, which indicates that 
 
 Protocol:
 - perform the same analysis, but glom by species
@@ -141,3 +141,15 @@ Protocol:
 
 Results:
 - 19 indicator species were identified
+- see this table for the list of ASVs and their taxonomic classification
+
+  ### Core Microbiome and Indicator Species Analysis
+  March 4, EG:
+  - tables containing the core microbiome species and indicator species for the farm-exposed group were joined using the inner_join() function, basing the join on the ASV column in either table (see code here)
+  - there were 3 species in common betwen the 2 tables:
+
+|ASV code                        |Domain  |Phylum           |Class          |Order             |Family                     |Genus                   |Species               |Lived on farm?|Stat |p-value|
+|--------------------------------|--------|-----------------|---------------|------------------|---------------------------|------------------------|----------------------|--------------|-----|-------|
+|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes       |Firmicutes     |Erysipelotrichales|_Erysipelaclostridiaceae_  |_NA_                    |_NA_                  |Yes           |0.209|0.035  |
+|bfab02a86c5187ed451db10d9b81b8d5|Bacteria|Firmicutes       |Clostridia     |Lachnospirales    |_Lachnospiraceae_          |_Prevotellaceae_UCG-001_|_uncultured bacterium_|Yes           |0.233|0.010  |
+|3f9fcc47fb363e0fdfa75dc56bb107f5|Bacteria|Bacteroidota     |Bacteroidia    |Bacteroidales     |_Tannerellaceae_           |_NA_                    |_NA_                  |Yes           |0.184|0.040  |

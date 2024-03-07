@@ -31,8 +31,10 @@ nofarm_ASVs <- core_members(parkinsons_nofarm, detection=0, prevalence = 0.1)
 
 
 # What are these ASVs? you can code it in two different ways to see the same things
-prune_taxa(farm_ASVs,phylobj) %>%
+farm_ASV_core <- prune_taxa(farm_ASVs,phylobj) %>%
   tax_table()
+view(farm_ASV_core)
+save(farm_ASV_core, file = "core_farm_ASV.RData")
 
 tax_table(prune_taxa(nofarm_ASVs,phylobj))
 

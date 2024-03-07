@@ -33,7 +33,10 @@ view(taxtable)
 isa_frame <- isa_parkinsons$sign %>%
   rownames_to_column(var="ASV") %>%
   left_join(taxtable) %>%
-  filter(p.value<0.05) %>% View() %>%
-  save(file = "isa_frame.RData") %>%
-  write.csv("isa_frame.csv", row.names = FALSE)
+  filter(p.value<0.05)
+
+
+save(isa_frame, file = "isa_frame.RData")
+  
+write.csv("isa_frame.csv", row.names = FALSE)
 

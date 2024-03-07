@@ -60,7 +60,7 @@ exposure_list_core <- list(Farm = farm_ASVs, No_Farm = nofarm_ASVs)
 # Create a Venn diagram using all the ASVs shared and unique to antibiotic users and non users
 core_venn <- ggVennDiagram(x = exposure_list_core) + coord_flip()
 
-ggsave("venn_core(r.ab_0.01,prev_0.5).png", core_venn)
+ggsave("venn_core(r.ab_0,prev_0.1).png", core_venn, height = 7, width = 10)
 
 
 # Create a Venn diagram of all species

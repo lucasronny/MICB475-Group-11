@@ -138,12 +138,14 @@ Results:
 
 - and the Venn diagram
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/venn_core(r.ab_0%2Cprev_0.1).png">
+- overall, there are more ASVs included into the analysis with the less stringent parameters, consistent with the bar plot generated
+- the farm group has more unique species compared to the non-farm group, meaning that 
 
 ### Indicator Species Analysis, continued
 February 29, EG
 
 - only 6 ASVs were identified as indictor species; these are too few for downstream analysis
-- addtionally, the Stat values for these ASVs were below 0.7, which indicates that 
+- addtionally, the IVs for these ASVs were below 0.7, which indicates that 
 
 Protocol:
 - perform the same analysis, but glom by species
@@ -152,7 +154,7 @@ Protocol:
 
 Results:
 - 19 indicator species were identified
-- see this file for tables listing the taxonomic classification of ASVs performed using the representative sequences in QIIME2 and NIH BLAST &reg; tool classification
+- see this [file](https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/isa/isa_frame_high1.csv) for tables listing the taxonomic classification of ASVs performed using the representative sequences in QIIME2 and NIH BLAST &reg; tool classification
 
 ### Core Microbiome and Indicator Species Analysis
 March 4, EG:

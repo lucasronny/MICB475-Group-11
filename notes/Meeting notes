@@ -79,6 +79,44 @@ Only 3 species in common between the ISA and ASVs in the exposed group
 - how to interpret the bar plots generated in core microbiome analysis?
 - how to interpret and describe IV values? what are "plots"?
 
+Keegan Notes - March 7 2024
+
+- Evelyn Strongly leans towards methods paper
+    - Introduce protocol/pipeline and show someone how we can apply this model. 
+    - We should still apply to colombia dataset to demonstrate method
+    - Limitation being the dataset
+- Comparison to Colombia data
+    - Create list in form of dictionary (In python, find R equivalent) > Use for loop to find if exists
+    - Boxplot of absolute abundance of species - have other included
+- Methods paper: Designing Taxonomic model
+    - Intro is why methodology is important - makes our team proposal secondary
+    - Protocols
+    - Methods: Theory behind what is tax model, how it was build, explained as if someone was going through
+        - Reference Script in Github
+    - Discussions/Future Applications/Comparison to other modelling/Ideal datasets
+        - Should be able to assess with other farm datasets
+- Proposal discussion
+    - Writing: No cohesiveness - choppiness - scattered ideas, not enough group editing
+    - Intro should have signficance - why are we looking
+    - Objectives: lot of repetition
+    - Workflow: Not great understanding of general workflow? - 
+    - Approach table: lacking specificity & generic. I.e parkinson's filtering etc, Qiime workflow
+    - Edits to make:
+        - Extension can be offered: By Friday next week. 
+        - 6.5 points offered if we address feedback - bump mark up to 50
+- Relative abundance - 2 bars -> yes/no for phylum level - instead of taxa bar plot. 
+- Indicator values for species -> all significant but in theory how good indicates condition.
+- Model application not validate data
+- Leo's tiered model -> do not combine ISA and Core microbiome? Good idea -> show what data shows first.
+    - Using scoring system to predict farm vs non-farm > Maybe can do research paper
+
+Data is the data :)
+
+To do:
+- Start to write comparison code to apply our indicator ASVs to colombia dataset
+- Table of cities and which ones we predict will come (more) positive and negative
+
+
 
 
 

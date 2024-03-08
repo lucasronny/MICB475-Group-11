@@ -76,8 +76,14 @@ March 7:
 Only 3 species in common between the ISA and ASVs in the exposed group
 12 indicator species identified when setting IV>0.2 and p<0.05 (all blasted, see ISA_BLAST table in Code/parkinsons)
     - IV threshold selected arbitrarily
-- how to interpret the bar plots generated in core microbiome analysis?
+- how to interpret the bar plots generated in core microbiome analysis? --> use differential abudance plots using relative abudance
+        - phylum level, facet by y/n
+        - only meaningful if there are clear patterns
+        - group samples by y/n
 - how to interpret and describe IV values? what are "plots"?
+    - IV = 1 = perfect indicator
+    - anything less than that is a worse predictor
+    - 0.7 is an arbitrary number to trim down the amount of indicator species
 
 Keegan Notes - March 7 2024
 

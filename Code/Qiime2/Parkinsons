@@ -21,7 +21,7 @@ qiime demux summarize \
 
 #NO demultiplexing step required
 
-#Denoising using DADA2
+#Denoising and trimming using DADA2
 qiime dada2 denoise-single \
   --i-demultiplexed-seqs demux_seqs.qza \
   --p-trim-left 0 \

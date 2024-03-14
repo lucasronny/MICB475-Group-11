@@ -219,7 +219,7 @@ Bogota data collected by adding census results from both Bogota D.C. and Cundina
 5. Barranquilla
 
 
-### Applying The Model to The Columbia Dataset
+### Applying The Model to The Colombia Dataset
 March 13, KM
 <br>Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
 

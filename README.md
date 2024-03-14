@@ -189,7 +189,7 @@ Conclusion:
 
  ### Ranking Cities by Agricultural Exposure to Predict Which Will Be Identified as "Farming Populations" by The Predictive Model
 March 13, ANM, LW
-Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Colombian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
+<br>Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Colombian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
 
 Procedure:
 
@@ -216,7 +216,7 @@ Bogota data collected by adding census results from both Bogota D.C. and Cundina
 
 ### Applying The Model to The Columbia Dataset
 March 13, KM
-Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
+<br>Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
 
 Procedure:
 

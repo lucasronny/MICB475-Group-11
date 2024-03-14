@@ -189,17 +189,30 @@ Conclusion:
 
  ### Ranking Cities by Agricultural Exposure to Predict Which Will Be Identified as "Farming Populations" by The Predictive Model
 March 13, ANM, LW
-Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Columbian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
+Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Colombian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
 
 Procedure:
 
+
 Results:
-- The rankings are as follows:
-	1. Bucaramanga
-	2. Medellin 
-	3. Bogota
-	4. Cali
-	5. Barranquilla
+| City        | Associated Department | Land Cover | Proportion of Agricultural Land | Total Workers | Proportion of workers |
+|-------------|------------------------|------------|----------------------------------|---------------|------------------------|
+| Bogota      | DC and Cundinamarca   | 1,482,641  | 63.07%                           | 285,275       | 2.70%                  |
+| Barranquilla| Atlantico             | 192,664    | 65.70%                           | 18,905        | 0.75%                  |
+| Medellin    | Antioquia             | 3,426,582  | 54.75%                           | 247,384       | 4.14%                  |
+| Cali        | Valle del Cauca       | 1,100,046  | 54.11%                           | 88,327        | 2.33%                  |
+| Bucaramanga | Santander             | 1,946,487  | 64.70%                           | 170,329       | 8.48%                  |
+
+Bogota data collected by adding census results from both Bogota D.C. and Cundinamarca since officially the city of Bogota is considered to be part of Cundinamarca but was treated separately in the census. 
+
+### Rankings (most to least agricultural):
+
+1. Bucaramanga
+2. Medellin
+3. Bogota
+4. Cali
+5. Barranquilla
+
 
 ### Applying The Model to The Columbia Dataset
 March 13, KM

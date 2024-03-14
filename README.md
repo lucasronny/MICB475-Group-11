@@ -192,6 +192,11 @@ March 13, ANM, LW
 <br>Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Colombian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
 
 Procedure:
+- Data taken from the Censo Nacional Agropecuario 2014
+- Cities in the Colombia dataset were classified based on their associated Department.
+- Using the Census we looked and the data for Land Cover (the amount of land in hectares that is used for agricultural activities in a specific Department). Then we looked and the tables covering the amount of agricultural workers for each Department.
+- The total amount of hectares in land cover and the total amount of workers respectively, were used to calculate the proportion of Agricultural land and workers for each Department.
+- City ranking made by looking at the proportion results.
 
 
 Results:

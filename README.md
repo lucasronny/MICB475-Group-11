@@ -156,7 +156,7 @@ Results:
 - 19 indicator species were identified
 - see this [file](https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/isa/isa_frame_high1.csv) for tables listing the taxonomic classification of ASVs performed using the representative sequences in QIIME2 and NIH BLAST &reg; tool classification
 
-### Core Microbiome and Indicator Species Analysis
+### Core Microbiome and Indicator Species Analysis: Combining Results to Identify Species for the Predictive Model
 March 4, EG:
 
 Purpose: <br>
@@ -186,4 +186,27 @@ Conclusion:
 	- note that all the ubiquotous species (i.e., common to both groups) are excluded by the _p_-value threshold
 - only the species for the 2 bolded ASVs will be used as the species for the model
 	- this makes for a rather weak model, considering there are only 2 species and the indicator values are quite low
+
+ ### Ranking Cities by Agricultural Exposure to Predict Which Will Be Identified as "Farming Populations" by The Predictive Model
+March 13, ANM, LW
+Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Columbian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
+
+Procedure:
+
+Results:
+- The rankings are as follows:
+	1. Bucaramanga
+	2. Medellin 
+	3. Bogota
+	4. Cali
+	5. Barranquilla
+
+### Applying The Model to The Columbia Dataset
+March 13, KM
+Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
+
+Procedure:
+
+Results:
+
 

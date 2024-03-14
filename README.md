@@ -172,16 +172,18 @@ Results:
 |ASV code                        |Domain  |Phylum           |Class           |Order             |Family            |Genus                         |Species                    |Lived on farm?|Indicator value (IV)|_p_    |
 |--------------------------------|--------|-----------------|----------------|------------------|------------------|------------------------------|---------------------------|--------------|--------------------|-------|
 |bfab02a86c5187ed451db10d9b81b8d5|Bacteria|Firmicutes       |Clostridia      |Lachnospirales    |_Lachnospiraceae_ |_Eubacterium ventriosum group_|_uncultured bacterium_     |Yes           |0.420               |0.005  |
-|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Bacillota        |Erysipelotrichia|Erysipelotrichales|_Coprobacillaceae_|_Catenibacterium_             |_Catenibacterium misuokai_ |Yes           |0.327               |0.015  |
-|3f9fcc47fb363e0fdfa75dc56bb107f5|Bacteria|Bacteroidota     |Bacteroidia     |Bacteroidales     |_Tannerellaceae_  |_Parabacteroides_             |_Parabacteroides johnsonii_|Yes           |0.303               |0.030  |
+|**cbd66fa79a3e7fa1c33d29ed908de048**|Bacteria|Bacillota        |Erysipelotrichia|Erysipelotrichales|_Coprobacillaceae_|_Catenibacterium_             |_Catenibacterium misuokai_ |Yes           |0.327               |0.015  |
+|**3f9fcc47fb363e0fdfa75dc56bb107f5**|Bacteria|Bacteroidota     |Bacteroidia     |Bacteroidales     |_Tannerellaceae_  |_Parabacteroides_             |_Parabacteroides johnsonii_|Yes           |0.303               |0.030  |
 
 - all the sequences were blasted using the NIH BLAST&reg; tool
 - all ASVs were identified down to the species level, except for the species belonging to the _Lachnospiraceae_ family
 - additionally the uncultured bacterium ASV and _Parabacteroides johnsonii_ were in common between the unique core microbiome species in the exposed group and the indicator species
+- when comparing the species from core microbiome analysis unique to and the indicator species for the farm individuals, only 2 ASVs are identified: _Catenibacterium misuokai_ and _Parabacteroides johnsonii_ (the 2 bolded in the table) 
 
 Conclusion: 
 - the common species are very few
 - additionally, the IV are low (IV<0.42), indicating that the species identified are not unique to the farm group
 	- note that all the ubiquotous species (i.e., common to both groups) are excluded by the _p_-value threshold
-
+- only the species for the 2 bolded ASVs will be used as the species for the model
+	- this makes for a rather weak model, considering there are only 2 species and the indicator values are quite low
 

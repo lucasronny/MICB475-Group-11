@@ -40,15 +40,37 @@ Quality score for each base in the sequence reads.
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
 
 Alpha rarefaction curve generated in R, for only healthy individuals
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction//rarefactioncurve.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/rarefactioncurve.jpg">
 
 Results after denoising and rarefaction:
 - 24 samples with YES-farm, NO-PD retained
 - 64 samples with NO-farm, NO-PD retained
 
 
-### Alpha and Beta Diversity of the Parkinson's dataset in R:
+### Alpha and Beta Diversity of the Parkinson's dataset in Rstudio:
 February 10, 2024, LR
+
+Purpose: To compare the diversity metrics between yes-farm and no-farm individuals to see if there are any noticable differences between the two metadata categories. In order to be able to create a model, the two sets of data have to be significantly different, and diversity metrics are a good way to estimate this.
+
+Procedure:
+- Separate the yes-farm and no-farm individuals into separate phyloseq objects
+- Create alpha diversity plots;
+	- Use the plot_richness() function with the "Observed" and "Shannon" measures.
+	- Also create a Faith's PD alpha diversity plot using the pd() function, and an unrooted tree
+- Create beta diversity plots;
+	- Use the distance() and ordinate() functions to generate beta diversity PCoA plots of the following metrics:
+ 		- Bray Curtis, Unifrac, Weighted Unifrac and Jaccard metrics
+  
+Results:
+The alpha and beta diversity plots can be seen below.
+None of the diversity metrics show significant difference in diversity when comparing the yes-farm and no-farm individuals
+
+Alpha Diversity Plots for the Farm vs Non-Farm individuals
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.png.jpg">
+
+Beta Diversity Plots for the Farm vs Non-Farm individuals
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Beta_Diversity_Plots.png.jpg">
+
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
 February 28, 2024, EG:
@@ -68,7 +90,7 @@ Procedure:
 - generate a Venn diagram representing the unique and shared ASVs between groups
 
 Results:
-- only 3 core ASVs have been identified in the unexposed group, while 4 were identified in the exposed group
+- 3 core ASVs have been identified in the unexposed group, while 4 were identified in the exposed group
 - exposed group ASV taxonomic classification:
 
 |ASV code                        |Domain  |Phylum      |Class      |Order          |Family           |Genus             |Species               |

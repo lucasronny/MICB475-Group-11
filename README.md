@@ -36,10 +36,10 @@ Procedure:
 - Generate alpha rarefaction curve in Rstudio and in QIIME2 to determine rarefaction depth.
 - Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features. This was decided using the alpha rarefaction curve below, and using the QIIME2 online viewer.
 
-Quality score for each base in the sequence reads.
+Quality score for each base in the sequence reads:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
 
-Alpha rarefaction curve generated in R, for only healthy individuals
+Alpha rarefaction curve generated in R, for only healthy individuals:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/rarefactioncurve.jpg">
 
 Results after denoising and rarefaction:
@@ -65,10 +65,10 @@ Results:
 The alpha and beta diversity plots can be seen below.
 None of the diversity metrics show significant difference in diversity when comparing the yes-farm and no-farm individuals
 
-Alpha Diversity Plots for the Farm vs Non-Farm individuals
+Alpha Diversity Plots for the Farm vs Non-Farm individuals:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.png.jpg">
 
-Beta Diversity Plots for the Farm vs Non-Farm individuals
+Beta Diversity Plots for the Farm vs Non-Farm individuals:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Beta_Diversity_Plots.png.jpg">
 
 

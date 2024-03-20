@@ -22,7 +22,10 @@ The project aims to analyze the microbiome of healthy individuals living on a fa
 
 ## Lab Notebook
 
-### Processing of the Parkinson's dataset in QIIME2 (INSERT DATE HERE):
+### Processing of the Parkinson's dataset in QIIME2 and Rstudio:
+January 29, 2024, LR
+
+Purpose: To denoise, filter and rarefy the Parkinson's dataset to retrieve only healthy individuals for the comparison between individuals who have lived on a farm and individuals who have not.
 
 Results:
 - 25 samples with YES-farm, NO-PD
@@ -36,6 +39,8 @@ To inquire in meeting:
 - organize Github (dates, progress made)
 - NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
 
+### Alpha and Beta Diversity of the Parkinson's dataset in R:
+February 10, 2024, LR
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
 February 28, 2024, EG:

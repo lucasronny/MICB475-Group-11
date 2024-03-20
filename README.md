@@ -33,29 +33,19 @@ Procedure:
 - Filter out the non-PD individuals from the .qza file to leave only the healthy individuals
 - Generate the 4 files needed to create a phyloseq object; taxonomy.tsv, feature-table.txt, metadata.txt and tree.nwk; Then export
 - Import the files into Rstudio and generate a phyloseq object
-- Generate alpha rarefaction curve in Rstudio and in QIIME2 to determine rarefaction depth
-- Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features.
+- Generate alpha rarefaction curve in Rstudio and in QIIME2 to determine rarefaction depth.
+- Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features. This was decided using the alpha rarefaction curve below, and using the QIIME2 online viewer.
 
 Quality score for each base in the sequence reads.
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
 
-
 Alpha rarefaction curve generated in R, for only healthy individuals
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction//rarefactioncurve.jpg">
 
+Results after denoising and rarefaction:
+- 24 samples with YES-farm, NO-PD retained
+- 64 samples with NO-farm, NO-PD retained
 
-
-Results:
-- 25 samples with YES-farm, NO-PD
-
-To inquire in meeting: 
-- Should I have filtered the mitochondria + chlorplast?
-- Was 251 a good cutoff for filtering (i.e the last base pair, ~25 quality score)? 
-- All the "NO DISEASE & FARM=YES" have 0 in constipation?
-- Help with rarefaction curve - should we cut 1 of the samples off?
-- Further steps?
-- organize Github (dates, progress made)
-- NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
 
 ### Alpha and Beta Diversity of the Parkinson's dataset in R:
 February 10, 2024, LR

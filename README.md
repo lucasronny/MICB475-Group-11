@@ -25,7 +25,10 @@ The project aims to analyze the microbiome of healthy individuals living on a fa
 ### Processing of the Parkinson's dataset in QIIME2 and Rstudio:
 January 29, 2024, LR
 
-Purpose: To denoise, filter and rarefy the Parkinson's dataset to retrieve only healthy individuals for the comparison between individuals who have lived on a farm and individuals who have not.
+Purpose: To denoise, filter and rarefy the Parkinson's dataset to retrieve only healthy individuals for the comparison between individuals who have lived on a farm and individuals who have not. Then to export the processed OTU table, phylogenetic tree, metadata and the taxonomy table to create a phyloseq object in R for further analysis. 
+
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
+
 
 Results:
 - 25 samples with YES-farm, NO-PD

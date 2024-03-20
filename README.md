@@ -34,10 +34,15 @@ Procedure:
 - Generate the 4 files needed to create a phyloseq object; taxonomy.tsv, feature-table.txt, metadata.txt and tree.nwk; Then export
 - Import the files into Rstudio and generate a phyloseq object
 - Generate alpha rarefaction curve in Rstudio and in QIIME2 to determine rarefaction depth
-- Rarefaction depth of 
+- Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features.
 
 Quality score for each base in the sequence reads.
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
+
+
+Alpha rarefaction curve generated in R, for only healthy individuals
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/Non-PD rarefaction.pdf">
+
 
 
 Results:

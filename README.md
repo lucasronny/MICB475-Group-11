@@ -27,6 +27,16 @@ January 29, 2024, LR
 
 Purpose: To denoise, filter and rarefy the Parkinson's dataset to retrieve only healthy individuals for the comparison between individuals who have lived on a farm and individuals who have not. Then to export the processed OTU table, phylogenetic tree, metadata and the taxonomy table to create a phyloseq object in R for further analysis. 
 
+Procedure:
+- Combine manifest file with the sequence reads .qza file to demultiplex samples
+- Using the Quality scores per base pair plot (from below), trim and denoise the samples to a read depth of n=251 using DADA2
+- Filter out the non-PD individuals from the .qza file to leave only the healthy individuals
+- Generate the 4 files needed to create a phyloseq object; taxonomy.tsv, feature-table.txt, metadata.txt and tree.nwk; Then export
+- Import the files into Rstudio and generate a phyloseq object
+- Generate alpha rarefaction curve in Rstudio and in QIIME2 to determine rarefaction depth
+- Rarefaction depth of 
+
+Quality score for each base in the sequence reads.
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
 
 

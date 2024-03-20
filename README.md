@@ -41,7 +41,7 @@ Quality score for each base in the sequence reads.
 
 
 Alpha rarefaction curve generated in R, for only healthy individuals
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/Non-PD rarefaction.pdf">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction//rarefactioncurve.jpg">
 
 
 

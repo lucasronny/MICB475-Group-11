@@ -66,10 +66,10 @@ The alpha and beta diversity plots can be seen below.
 None of the diversity metrics show significant difference in diversity when comparing the yes-farm and no-farm individuals
 
 Alpha Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.png.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.png">
 
 Beta Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Beta_Diversity_Plots.png.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Beta_Diversity_Plots.png">
 
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)

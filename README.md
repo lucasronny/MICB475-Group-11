@@ -29,7 +29,7 @@ Purpose: To denoise, filter and rarefy the Parkinson's dataset to retrieve only 
 
 Procedure:
 - Combine manifest file with the sequence reads .qza file to demultiplex samples
-- Using the Quality scores per base pair plot (from below), trim and denoise the samples to a read depth of n=251 using DADA2
+- Using the Quality scores per base pair plot (see below), trim and denoise the samples to a read depth of n=251 using DADA2
 - Filter out the non-PD individuals from the .qza file to leave only the healthy individuals
 - Generate the 4 files needed to create a phyloseq object; taxonomy.tsv, feature-table.txt, metadata.txt and tree.nwk; Then export
 - Import the files into Rstudio and generate a phyloseq object
@@ -256,10 +256,21 @@ Bogota data collected by adding census results from both Bogota D.C. and Cundina
 
 ### Applying The Model to The Colombia Dataset
 March 13, KM
+
 <br>Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
 
 Procedure:
 
 Results:
 
+### New Validation Dataset Processing in QIIME2:
+March 23, EG <br>
 
+Purpose: <br>
+As the original validation dataset did not prove to be useful (see Applying The Model to The Columbia Dataset), we decided to attempt validating the model using another dataset collected to study the differences between the inhabitants of agricultural and urban communities. The new dataset ...
+
+Procedure:
+- Demultiplex the samples using the manifest file and single-end sequence reads (.qza file)
+- Determine trimming parameters using the quality scores per base pair plot (see below),
+- Trim and denoise the samples to a read depth of n=150 using the DADA2 algorithm
+- Generate the table.qzv and rep-seqs.qzv files and transfer to the local server for visualization

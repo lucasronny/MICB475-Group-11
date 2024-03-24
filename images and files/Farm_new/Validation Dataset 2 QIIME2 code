@@ -1,0 +1,57 @@
+Validation Dataset 2
+
+# log in to the shared server
+
+
+# import and demultiplex sequences
+qiime tools import \
+   --type EMPPairedEndSequences \
+   --input-path /mnt/datasets/project_2/farm/farm_seqs \
+   --output-path emp-paired-end-sequences.qza
+
+# problem with importing paired end seqs, try single end
+qiime tools import \
+   --type EMPSingleEndSequences \
+   --input-path mnt/datasets/project_2/farmfarm_seqs \
+   --output-path emp-single-end-sequences.qza
+
+# using sequences import is not supported for large datasets, use the manifest.tsv file!
+# use manifest file to import single end sequences
+qiime tools import \
+  --type "SampleData[SequencesWithQuality]" \
+  --input-format SingleEndFastqManifestPhred33V2 \
+  --input-path /mnt/datasets/project_2/farm/farm_manifest.tsv \
+  --output-path demux_seqs.qza
+
+# copy file demux.qzv file into local storage for viewing
+scp root@10.19.139.142:/data/new_farm/demux.qzv C:\Users\kilev\Desktop\MICB475-Group-11
+
+# DENOISE
+# use Dada2
+# using the Phred Quality Score (demux.qzv)
+qiime dada2 denoise-single \
+  --i-demultiplexed-seqs demux_seqs.qza \
+  --p-trim-left 0 \
+  --p-trunc-len 150 \
+  --o-representative-sequences rep-seqs.qza \
+  --o-table table.qza \
+  --o-denoising-stats stats.qza
+
+# Visualize DADA2 stats
+qiime metadata tabulate \
+  --m-input-file stats.qza \
+  --o-visualization stats.qzv
+
+# Visualize ASVs stats
+qiime feature-table summarize \
+  --i-table table.qza \
+  --o-visualization table.qzv \
+  --m-sample-metadata-file /mnt/datasets/project_2/farm/farm_metadata.tsv
+  
+qiime feature-table tabulate-seqs \
+  --i-data rep-seqs.qza \
+  --o-visualization rep-seqs.qzv
+
+# copy the table.qzv file into local storage for viewing
+scp root@10.19.139.142:/data/new_farm/table.qzv C:\Users\kilev\Desktop\MICB475-Group-11
+scp root@10.19.139.142:/data/new_farm/rep-seqs.qzv C:\Users\kilev\Desktop\MICB475-Group-11

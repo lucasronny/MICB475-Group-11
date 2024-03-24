@@ -22,19 +22,54 @@ The project aims to analyze the microbiome of healthy individuals living on a fa
 
 ## Lab Notebook
 
-### Processing of the Parkinson's dataset in QIIME2 (INSERT DATE HERE):
+### Processing of the Parkinson's dataset in QIIME2 and Rstudio:
+January 29, 2024, LR
 
+Purpose: To denoise, filter and rarefy the Parkinson's dataset to retrieve only healthy individuals for the comparison between individuals who have lived on a farm and individuals who have not. Then to export the processed OTU table, phylogenetic tree, metadata and the taxonomy table to create a phyloseq object in R for further analysis. 
+
+Procedure:
+- Combine manifest file with the sequence reads .qza file to demultiplex samples
+- Using the Quality scores per base pair plot (from below), trim and denoise the samples to a read depth of n=251 using DADA2
+- Filter out the non-PD individuals from the .qza file to leave only the healthy individuals
+- Generate the 4 files needed to create a phyloseq object; taxonomy.tsv, feature-table.txt, metadata.txt and tree.nwk; Then export
+- Import the files into Rstudio and generate a phyloseq object
+- Generate alpha rarefaction curve in Rstudio and in QIIME2 to determine rarefaction depth.
+- Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features. This was decided using the alpha rarefaction curve below, and using the QIIME2 online viewer.
+
+Quality score for each base in the sequence reads:
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
+
+Alpha rarefaction curve generated in R, for only healthy individuals:
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/rarefactioncurve.jpg">
+
+Results after denoising and rarefaction:
+- 24 samples with YES-farm, NO-PD retained
+- 64 samples with NO-farm, NO-PD retained
+
+
+### Alpha and Beta Diversity of the Parkinson's dataset in Rstudio:
+February 10, 2024, LR
+
+Purpose: To compare the diversity metrics between yes-farm and no-farm individuals to see if there are any noticable differences between the two metadata categories. In order to be able to create a model, the two sets of data have to be significantly different, and diversity metrics are a good way to estimate this.
+
+Procedure:
+- Separate the yes-farm and no-farm individuals into separate phyloseq objects
+- Create alpha diversity plots;
+	- Use the plot_richness() function with the "Observed" and "Shannon" measures.
+	- Also create a Faith's PD alpha diversity plot using the pd() function, and an unrooted tree
+- Create beta diversity plots;
+	- Use the distance() and ordinate() functions to generate beta diversity PCoA plots of the following metrics:
+ 		- Bray Curtis, Unifrac, Weighted Unifrac and Jaccard metrics
+  
 Results:
-- 25 samples with YES-farm, NO-PD
+The alpha and beta diversity plots can be seen below.
+None of the diversity metrics show significant difference in diversity when comparing the yes-farm and no-farm individuals
 
-To inquire in meeting: 
-- Should I have filtered the mitochondria + chlorplast?
-- Was 251 a good cutoff for filtering (i.e the last base pair, ~25 quality score)? 
-- All the "NO DISEASE & FARM=YES" have 0 in constipation?
-- Help with rarefaction curve - should we cut 1 of the samples off?
-- Further steps?
-- organize Github (dates, progress made)
-- NEW: I recall in the last meeting that we might be pooling the microbiomes in the Colombia dataset by city (for when we test our model). Each city has a different number of samples, so should we rarefy the Colombia dataset too?
+Alpha Diversity Plots for the Farm vs Non-Farm individuals:
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.png">
+
+Beta Diversity Plots for the Farm vs Non-Farm individuals:
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Beta_Diversity_Plots.png">
 
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
@@ -55,7 +90,7 @@ Procedure:
 - generate a Venn diagram representing the unique and shared ASVs between groups
 
 Results:
-- only 3 core ASVs have been identified in the unexposed group, while 4 were identified in the exposed group
+- 3 core ASVs have been identified in the unexposed group, while 4 were identified in the exposed group
 - exposed group ASV taxonomic classification:
 
 |ASV code                        |Domain  |Phylum      |Class      |Order          |Family           |Genus             |Species               |
@@ -192,6 +227,11 @@ March 13, ANM, LW
 <br>Purpose: To build a hypothesis to use in testing our model. Before looking for the model species in the Colombian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate **(fill in)** to assign each selected city a ranking. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
 
 Procedure:
+- Data taken from the Censo Nacional Agropecuario 2014
+- Cities in the Colombia dataset were classified based on their associated Department.
+- Using the Census we looked and the data for Land Cover (the amount of land in hectares that is used for agricultural activities in a specific Department). Then we looked and the tables covering the amount of agricultural workers for each Department.
+- The total amount of hectares in land cover and the total amount of workers respectively, were used to calculate the proportion of Agricultural land and workers for each Department.
+- City ranking made by looking at the proportion results.
 
 
 Results:
@@ -214,7 +254,7 @@ Bogota data collected by adding census results from both Bogota D.C. and Cundina
 5. Barranquilla
 
 
-### Applying The Model to The Columbia Dataset
+### Applying The Model to The Colombia Dataset
 March 13, KM
 <br>Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
 

@@ -26,6 +26,7 @@ qiime tools import \
 # copy file demux.qzv file into local storage for viewing
 scp root@10.19.139.142:/data/new_farm/demux.qzv C:\Users\kilev\Desktop\MICB475-Group-11
 
+
 # DENOISE
 # use Dada2
 # using the Phred Quality Score (demux.qzv)
@@ -55,3 +56,41 @@ qiime feature-table tabulate-seqs \
 # copy the table.qzv file into local storage for viewing
 scp root@10.19.139.142:/data/new_farm/table.qzv C:\Users\kilev\Desktop\MICB475-Group-11
 scp root@10.19.139.142:/data/new_farm/rep-seqs.qzv C:\Users\kilev\Desktop\MICB475-Group-11
+
+
+# TAXONOMIC ANALYSIS
+# use the silva classifier (more complete); do not need to train the classifier because V4 is used in sequencing
+qiime feature-classifier classify-sklearn \
+  --i-classifier /mnt/datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+# visualize the table
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+
+# generate taxonomy barplots
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file /mnt/datasets/project_2/farm/farm_metadata.tsv \
+  --o-visualization taxa-bar-plots.qzv
+
+
+# FILTERING
+# at this stage, filter out only the mitochondrial and chloroplast DNA
+qiime taxa filter-table \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --p-exclude mitochondria,chloroplast \
+  --o-filtered-table filtered_table.qza
+
+# PHYLOGENETIC TREE
+# create a phylogenetic tree using the ASVs
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned-rep-seqs.qza \
+  --o-masked-alignment masked-aligned-rep-seqs.qza \
+  --o-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza

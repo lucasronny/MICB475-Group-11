@@ -94,3 +94,35 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-masked-alignment masked-aligned-rep-seqs.qza \
   --o-tree unrooted-tree.qza \
   --o-rooted-tree rooted-tree.qza
+
+
+# EXPORTING FILES FOR PHYLOSEQ OBJECT
+# exporting table.qza file
+qiime tools export \
+--input-path /data/new_farm/table.qza \
+--output-path table_export 
+
+# exporting taxonomy.qza
+qiime tools export \
+--input-path /data/new_farm/taxonomy.qza \
+--output-path taxonomy_export 
+
+# exporting the rooted tree
+qiime tools export \
+--input-path /data/new_farm/rooted-tree.qza \
+--output-path rooted_tree_export
+
+# change directory to table_export
+# convert the .biom file into .txt file
+biom convert \
+-i feature-table.biom \
+--to-tsv \
+-o feature-table.txt
+
+# copy the mpt_export directory to the local computer
+# but move into the right directory first
+scp -r root@10.19.139.142:~/data/new_farm/farm_export .
+
+cd C:\Users\kilev\Desktop\MICB475_R
+
+scp root@10.19.139.142:/mnt/datasets/project_2/farm/farm_metadata.tsv .

@@ -67,7 +67,7 @@ for (asv in target_asvs) {
   }
 }
 
-
+# Code for comparing ASVs from Parkinsons and New Farm data
 not_found_count <- 0
 found_count <- 0
 for (asv in rownames(otu_table(phylobj))) {     

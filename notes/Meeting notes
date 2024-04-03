@@ -167,8 +167,18 @@ To Do:
 Have everything (farm dataset > phyloseq > for loop > Visualize) done by next week
 Then set up a powerpoint that combines all our data
 
+Meeting: March 28 2024
 
+Figure 1: alpha diversity (3 panels)
+Beta diversity to supplemental (e.g. PCoA plots)
+Figure 2: core microbiome (the less strngent one with more ASVs)
+Table 1: comprehensive indicator taxa (the one with all of them, 17-19)
+Table 2: taxonomic model (the 3 taxa)
+Figure 3: bubble plot (get code from team 12)
 
+To Do:
+for the code: filter (subset taxa) the phyloseq object by order > family > genus (not species)
+prepare powerpoint for presentation
 
 
 

@@ -213,7 +213,7 @@ Results:
 - all the sequences were blasted using the NIH BLAST&reg; tool
 - all ASVs were identified down to the species level, except for the species belonging to the _Lachnospiraceae_ family
 - additionally the uncultured bacterium ASV and _Parabacteroides johnsonii_ were in common between the unique core microbiome species in the exposed group and the indicator species
-- when comparing the species from core microbiome analysis unique to and the indicator species for the farm individuals, only 2 ASVs are identified: _Catenibacterium misuokai_ and _Parabacteroides johnsonii_ (the 2 bolded in the table) 
+- when comparing the species from core microbiome analysis unique to and the indicator species for the farm individuals, only 2 ASVs are identified: _Catenibacterium misuokai_ and _Parabacteroides johnsonii_ (**the 2 bolded in the table**) 
 
 Conclusion: 
 - the common species are very few
@@ -274,3 +274,4 @@ Procedure:
 - Determine trimming parameters using the quality scores per base pair plot (see below),
 - Trim and denoise the samples to a read depth of n=150 using the DADA2 algorithm
 - Generate the table.qzv and rep-seqs.qzv files and transfer to the local server for visualization
+- Generate taxonomy.qza file for taxonomic classification of ASVs clustered in previous steps

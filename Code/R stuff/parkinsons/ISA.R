@@ -32,7 +32,7 @@ view(isa_taxtable)
 # consider that your table is only going to be resolved up to the species level
 isa_frame <- isa_parkinsons$sign %>%
   rownames_to_column(var="ASV") %>%
-  left_join(taxtable) %>%
+  left_join(isa_taxtable) %>%
   filter(p.value<0.05)
 
 save(isa_frame_high, file = "isa_frame_high.RData")
@@ -53,7 +53,7 @@ view(isa_parkinsons)
 
 # create a nice table by combining with the tax table
 isa_taxtable <- tax_table(phylobj) %>% as.data.frame() %>% rownames_to_column(var="ASV")
-view(isa_taxtable)
+view(as.data.frame(isa_taxtable))
 
 # generate a table containing all ASVs with IV>0.2 and p<0.05
 isa_frame_high <- isa_parkinsons$sign %>%
@@ -61,6 +61,13 @@ isa_frame_high <- isa_parkinsons$sign %>%
   left_join(isa_taxtable) %>%
   filter(p.value<0.05) %>%
   filter(stat>0.2)
+
+isa_frame_all <- isa_parkinsons$sign %>%
+  rownames_to_column(var="ASV") %>%
+  left_join(isa_taxtable) %>%
+  filter(p.value<0.05)
+
+
 
 save(isa_frame_high, file = "isa_frame_high.RData")
 

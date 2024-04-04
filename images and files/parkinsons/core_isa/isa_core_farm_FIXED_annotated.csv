@@ -1,0 +1,5 @@
+ASV,Group,IV,p-value,Domain ,Phylum ,Class ,Order ,Family ,Genus ,Species ,,GenBank,Similarity,Match ,Notes
+fdbdbe81dd5e0e2b71693fe87db9691d,Farm,0.409,0.045, Bacteria,  Firmicutes,  Bacilli,  Erysipelotrichales,  Erysipelotrichaceae,  Holdemanella, Holdemanella biformis DSM 3989,,OX351147.1,100,Yes,others with different higher classification identified
+cbd66fa79a3e7fa1c33d29ed908de048,Farm,0.398,0.025, Bacteria,  Firmicutes,  Bacilli,  Erysipelotrichales,  Erysipelatoclostridiaceae,  Catenibacterium,Catenibacterium mitsuokai,,OR537263.1,100,Yes,"many other uncultured species, but also many of the same species"
+ce7e172e3d64bc42dddb2f4aa26e3a03,Farm,0.553,0.02, Bacteria,  Desulfobacterota,  Desulfovibrionia,  Desulfovibrionales,  Desulfovibrionaceae,  Desulfovibrio,Desulfovibrio piger ATCC 29098,,OX351486.1,100,Yes,another species different strain identified (poorly described DSM32187) 
+dc04cb67b3295173275e20a8a7a3d16a,Farm,0.408,0.04, Bacteria,  Bacteroidota,  Bacteroidia,  Flavobacteriales,  Flavobacteriaceae,NA,NA,,NA,NA,NA,NA

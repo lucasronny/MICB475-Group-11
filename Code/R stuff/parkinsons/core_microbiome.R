@@ -8,11 +8,20 @@ library(ggVennDiagram)
 load("phyloseqobject_parkinsons.RData")
 # unrarefied that has been filtered - nonrarefied because the analyses below take into consideration that the different datasets come with different sequencing depths
 
+load("phyloseqobject_parkinsons.RData")
+metadata <- sample_data(phylobj)
+view(metadata)
+
+# 04.03.2024 DATASET HAS NOT BEEN FILTERED! MUST RE-DO CORE, ISA, AND ALL DOWNSTREAM STEPS
+
+healthy <- subset_samples(phylobj, Disease == "Control")
+view(sample_data(healthy))
+
 #### "core" microbiome ####
 
 # Convert otu table to relative abundance
 # this is done because the analyses work with the relative, not absolute, abundance
-parkinsons_RA <- transform_sample_counts(phylobj, fun=function(x) x/sum(x))
+parkinsons_RA <- transform_sample_counts(healthy, fun=function(x) x/sum(x))
 
 
 # Filter dataset by exposure
@@ -53,9 +62,16 @@ ggsave("core_ASVs_barplot(r.ab_0,prev_0.1).png", barplot, width = 20, height = 8
 exposure_list_core <- list(Farm = farm_ASVs, No_Farm = nofarm_ASVs)
 
 # Create a Venn diagram using all the ASVs shared and unique to antibiotic users and non users
-core_venn <- ggVennDiagram(x = exposure_list_core) + coord_flip()
+core_venn <- ggVennDiagram(x = exposure_list_core) + coord_flip() +
+  labs(title = "Total Count of Shared and Unique ASVs Per Group",  # Modify the title
+  x = "Group",                                     # Modify the x-axis label
+  y = "Count",                                     # Modify the y-axis label
+  fill = "Count") +                                # Modify the legend label
+  theme(plot.title = element_text(hjust = 0)) +  # Center the title
+  theme(plot.title = element_text(size = 30),      # Increase title font size
+        text = element_text(size = 25))            # Increase label font size
 
-ggsave("venn_core(r.ab_0,prev_0.1).png", core_venn, height = 7, width = 10)
+ggsave("venn_core(r.ab_0,prev_0.1)_FIXED.png", core_venn, height = 7, width = 10)
 
 
 
@@ -75,8 +91,10 @@ for (r in 1:nrow(farm_ASV_core_df)) {
 }
 view(farm_ASV_unique_df)
 
-save(farm_ASV_unique_df, file = "farm_ASV_unique_df.RData")
+save(farm_ASV_unique_df, file = "farm_ASV_unique_df_FIXED.RData")
 
+
+######### IGNORE ###############
 # Create a Venn diagram of all species
 farm_list <- core_members(parkinsons_farm, detection=0.001, prevalence = 0.10)
 nofarm_list <- core_members(parkinsons_nofarm, detection=0.001, prevalence = 0.10)

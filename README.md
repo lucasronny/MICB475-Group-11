@@ -189,6 +189,7 @@ Protocol:
 
 Results:
 - 19 indicator species were identified
+- 12 ASVs were subsetted given the parameters above
 - see this [file](https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/isa/isa_frame_high1.csv) for tables listing the taxonomic classification of ASVs performed using the representative sequences in QIIME2 and NIH BLAST &reg; tool classification
 
 ### Core Microbiome and Indicator Species Analysis: Combining Results to Identify Species for the Predictive Model

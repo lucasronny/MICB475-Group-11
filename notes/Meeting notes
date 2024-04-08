@@ -210,6 +210,34 @@ Presentation:
 Did course evaluations
 Talked about random UBC campus things w/ Evelyn
     
+Keegan Notes - April 8 2024
+
+Went over slides with Evelyn
+- Slide 3: Not predict future outcomes -> just classify variables (existing outcomes)
+- 9 Still need more simplified model - get rid of details
+- 10: include word farming/microbial diversity -> mention to group as limitations diversity
+- 15: Mention 2nd dataset used : known farm dataset
+- Add whole new slide before 10 -> Parkinson's dataset control source dataset
+- Also introduce farm dataset of validation (couple seconds)
+- Call Phases in ppt not Aims
+
+Still step by step guide, but putting into practice
+
+Practice coaching 
+
+Went over figure legends. Don't need repeating data
+Pipeline: Shouldn't be in pieces just one linear line. Need to revisit
+- Program LucidChart to build pipelines
+
+Stick to as farm group
+
+Figure 1 - don't include the metrics in title. Write p value greater than 0.05. Mention how they were tested. 
+Table 2 - Needs different title - instead of finding, mention reconsiling two group into one. Change column titles for more descritpion
+Make sure tables are actual text tables not just image
+Figure S1 - better title. 
+
+Apply feedback from proposal manuscript into the final draft.
+
 
 
 

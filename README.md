@@ -258,7 +258,7 @@ Bogota data collected by adding census results from both Bogota D.C. and Cundina
 ### Applying The Model to The Colombia Dataset
 March 13, KM
 
-<br>Purpose: To look for the model species in each city in the Columbia dataset to determine whether 
+<br>Purpose: To look for the model species in each city in the Colombia dataset to determine whether 
 
 Procedure:
 
@@ -268,7 +268,7 @@ Results:
 March 23, EG <br>
 
 Purpose: <br>
-As the original validation dataset did not prove to be useful (see Applying The Model to The Columbia Dataset), we decided to attempt validating the model using another dataset collected to study the differences between the inhabitants of agricultural and urban communities. The new dataset ...
+As the original validation dataset did not prove to be useful (see Applying The Model to The Colombia Dataset), we decided to attempt validating the model using another dataset collected to study the differences between the inhabitants of agricultural and urban communities. The new dataset Is one that compares stool samples between American industrialized and Himalayan agricultural populations. 
 
 Procedure:
 - Demultiplex the samples using the manifest file and single-end sequence reads (.qza file)

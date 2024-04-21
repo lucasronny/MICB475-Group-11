@@ -280,15 +280,23 @@ Procedure:
 
 
 ### Results from model validation:
-March 23, LR 
+April 4, LR <br>
 
-Purpose:
-- 
-
+Purpose: <br>
+The list of indicator ASVs is applied to the new Farm dataset to validate if the indicator ASVs are actually indicators for agricultural exposure. This step is thus done to assess the abundance and prevalence of each indicator ASV in the Farm dataset to see how valid the indicator ASVs are.
 
 Procedure:
+- Multiple ASVs were corresponding to the same taxa, thus ASVs for the same taxa were kept separate for preventing overrepresentation of each taxa
+- Remove non-farmers (Americans) from the dataset, only keeping Nepalese farmers
+- Scan through Farm dataset for the presence and abundance of each indicator ASV
+- A bubble plot was generated, displaying total ASV abundance as the color of each bubble, and the percentage prevalence is shown as the bubble size.
 
 Results:
+- Some ASVs were only present in one sample, and were thus removed from the figure. This can be seen in comparing the two figures below.
+- Catenibacterium mitsuokai ASV 1 and Holdemanellea biformis ASV 2 were present in >70% of samples.
+- Holdemanellea biformis ASV 1 was only present in 35% of samples.
+- Desulfovibrio piger was present in 48% of samples.
+
 
 Bubble plot including ASVs which appeared only once:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/Farm_new/Bubble_plot_sample_counts.png">

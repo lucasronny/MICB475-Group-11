@@ -287,5 +287,12 @@ Purpose: <br>
 
 Procedure:
 
+Results:
+
+Bubble plot including ASVs which appeared only once:
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/Farm_new/Bubble_plot_sample_counts.png">
+
+Bubble plot excluding ASVs which appeared only once:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/Farm_new/Bubble_plot_sample_counts_no_1s.png">
+
 

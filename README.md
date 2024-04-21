@@ -69,7 +69,7 @@ Alpha Diversity Plots for the Farm vs Non-Farm individuals:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.jpg">
 
 Beta Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Beta_Diversity_Plots.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Combined_Beta_Diversity_Plots_with_Legend.png">
 
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)

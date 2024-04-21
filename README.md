@@ -276,3 +276,13 @@ Procedure:
 - Trim and denoise the samples to a read depth of n=150 using the DADA2 algorithm
 - Generate the table.qzv and rep-seqs.qzv files and transfer to the local server for visualization
 - Generate taxonomy.qza file for taxonomic classification of ASVs clustered in previous steps
+- 
+
+
+### Results from model validation:
+March 23, LR <br>
+
+Purpose: <br>
+
+
+Procedure:

@@ -283,7 +283,7 @@ Procedure:
 April 4, LR <br>
 
 Purpose: <br>
-The list of indicator ASVs is applied to the new Farm dataset to validate if the indicator ASVs are actually indicators for agricultural exposure. This step is thus done to assess the abundance and prevalence of each indicator ASV in the Farm dataset to see how valid the indicator ASVs are.
+The list of indicator ASVs was applied to the new Farm dataset to validate if the indicator ASVs are actually indicators for agricultural exposure. This step is thus done to assess the abundance and prevalence of each indicator ASV in the Farm dataset to see how valid the indicator ASVs are.
 
 Procedure:
 - Multiple ASVs were corresponding to the same taxa, thus ASVs for the same taxa were kept separate for preventing overrepresentation of each taxa

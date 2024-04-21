@@ -264,7 +264,7 @@ Procedure:
 
 Results:
 
-### New Validation Dataset Processing in QIIME2:
+### New Validation Dataset Processing in QIIME2 - Farm Dataset:
 March 23, EG <br>
 
 Purpose: <br>
@@ -279,7 +279,7 @@ Procedure:
 - 
 
 
-### Results from model validation:
+### Results from model validation of indicator ASVs on the Farm dataset:
 April 4, LR <br>
 
 Purpose: <br>

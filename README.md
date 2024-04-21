@@ -280,9 +280,10 @@ Procedure:
 
 
 ### Results from model validation:
-March 23, LR <br>
+March 23, LR 
 
-Purpose: <br>
+Purpose:
+- 
 
 
 Procedure:

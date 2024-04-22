@@ -26,9 +26,9 @@ parkinsons_genus_RA <- transform_sample_counts(parkinsons_genus, fun=function(x)
 # p-values --> from random sampling, are the IVs actually characteristic of the different groups within the predictor or are they random
 # if indicative, p < 0.05
 isa_parkinsons <- multipatt(t(otu_table(parkinsons_genus_RA)), cluster = sample_data(parkinsons_genus_RA)$`Lived_on_farm`)
-view(isa_parkinsons)
-# create a nice table by combining with the tax table
-# now, unlike in the phyloseq, we want the rows to be indexed as per normal and and the row names to be ASVs
+summary(isa_parkinsons)
+
+# create a results table by combining with the tax table
 isa_taxtable <- tax_table(phylobj) %>% as.data.frame() %>% rownames_to_column(var="ASV")
 view(isa_taxtable)
 

@@ -205,9 +205,9 @@ Procedure:
 Results:
 - there were 3 species in common betwen the total ASVs belonging to the exposed group and the indicator species:
 
-|ASV code                        |Domain  |Phylum           |Class           |Order             |Family            |Genus                         |Species                    |Lived on farm?|Indicator value (IV)|_p_    |
-|--------------------------------|--------|-----------------|----------------|------------------|------------------|------------------------------|---------------------------|--------------|--------------------|-------|
-|bfab02a86c5187ed451db10d9b81b8d5|Bacteria|Firmicutes       |Clostridia      |Lachnospirales    |_Lachnospiraceae_ |_Eubacterium ventriosum group_|_uncultured bacterium_     |Yes           |0.420               |0.005  |
+|ASV code                            |Domain  |Phylum           |Class           |Order             |Family            |Genus                         |Species                    |Lived on farm?|Indicator value (IV)|_p_    |
+|------------------------------------|--------|-----------------|----------------|------------------|------------------|------------------------------|---------------------------|--------------|--------------------|-------|
+|bfab02a86c5187ed451db10d9b81b8d5    |Bacteria|Firmicutes       |Clostridia      |Lachnospirales    |_Lachnospiraceae_ |_Eubacterium ventriosum group_|_uncultured bacterium_     |Yes           |0.420               |0.005  |
 |**cbd66fa79a3e7fa1c33d29ed908de048**|Bacteria|Bacillota        |Erysipelotrichia|Erysipelotrichales|_Coprobacillaceae_|_Catenibacterium_             |_Catenibacterium misuokai_ |Yes           |0.327               |0.015  |
 |**3f9fcc47fb363e0fdfa75dc56bb107f5**|Bacteria|Bacteroidota     |Bacteroidia     |Bacteroidales     |_Tannerellaceae_  |_Parabacteroides_             |_Parabacteroides johnsonii_|Yes           |0.303               |0.030  |
 
@@ -236,13 +236,13 @@ Procedure:
 
 
 Results:
-| City        | Associated Department | Land Cover | Proportion of Agricultural Land | Total Workers | Proportion of workers |
-|-------------|------------------------|------------|----------------------------------|---------------|------------------------|
-| Bogota      | DC and Cundinamarca   | 1,482,641  | 63.07%                           | 285,275       | 2.70%                  |
-| Barranquilla| Atlantico             | 192,664    | 65.70%                           | 18,905        | 0.75%                  |
-| Medellin    | Antioquia             | 3,426,582  | 54.75%                           | 247,384       | 4.14%                  |
-| Cali        | Valle del Cauca       | 1,100,046  | 54.11%                           | 88,327        | 2.33%                  |
-| Bucaramanga | Santander             | 1,946,487  | 64.70%                           | 170,329       | 8.48%                  |
+| City        | Associated Department| Land Cover| Proportion of Agricultural Land| Total Workers| Proportion of workers|
+|-------------|----------------------|-----------|--------------------------------|--------------|----------------------|
+| Bogota      | DC and Cundinamarca  | 1,482,641 | 63.07%                         | 285,275      | 2.70%                |
+| Barranquilla| Atlantico            | 192,664   | 65.70%                         | 18,905       | 0.75%                |
+| Medellin    | Antioquia            | 3,426,582 | 54.75%                         | 247,384      | 4.14%                |
+| Cali        | Valle del Cauca      | 1,100,046 | 54.11%                         | 88,327       | 2.33%                |
+| Bucaramanga | Santander            | 1,946,487 | 64.70%                         | 170,329      | 8.48%                |
 
 Bogota data collected by adding census results from both Bogota D.C. and Cundinamarca since officially the city of Bogota is considered to be part of Cundinamarca but was treated separately in the census. 
 
@@ -287,7 +287,8 @@ April 4th<br>
 Purpose:<br>
 While the analyses above were performed correctly (see core microbiome, ISA, and reconciliation sections above), the team missed the fact that the phyloseq object used for those analysis was not propoerly filtered. The object included samples from Parkinson's disease patients, whereas we aimed to include samples only from healhty individuals who lived on farms. This distinction is importnat because we selected 2 variables as examples for our journey on method development for building a taxonomic predictive model: gut microbiome composition and agricultural exposure. Therefore, the effect of Parkinson's disease would be a third variable, and this is outside the aims of our project. Consequently, we need to control for the overall health state of the included samples by including only healthy subjects.
 
-Protocol: <br>
+Protocol:
+- 
 - in the code for ISA and core microbiome analysis, include a function to filter the phyloseq object to make it contain only samples with "Control" output in the Disease metadata column
 - repeat the analysis using previously written code (see sections on ISA and core microbiome analysis)
 - the new outputs generated in the analyses
@@ -298,20 +299,32 @@ Protocol: <br>
 	Table of Indicator Taxa(generated by the ISA on the newly filtered phyloseq object), not annotated using NCBI BLAST:
 |ASV code                        |Domain  |Phylum          |Class           |Order             |Family                                 |Genus                                  |Species                            |Lived on farm?|Indicator value (IV)|_p-value_|
 |--------------------------------|--------|----------------|----------------|------------------|---------------------------------------|---------------------------------------|-----------------------------------|--------------|--------------------|---------|
-|54da3e844b42d39369127a368dcced1e|Bacteria|Firmicutes      |Bacilli         |RF39              |_RF39_                                 |_RF39_                                 |_human gut_                        |Yes           |0.280               |0.040    |
-|fdbdbe81dd5e0e2b71693fe87db9691d|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_Erysipelotrichaceae_                  |_Holdemanella_                         |_uncultured bacterium_             |Yes           |0.209               |0.045    |
-|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_ Erysipelatoclostridiaceae_           |_Catenibacterium_                      |_NA_                               |Yes           |0.398              |0.025  |
-|80dbd6cdd5798902a9038eb121f7f640|Bacteria|Firmicutes      |Clostridia      |Clostridia UCG-014|_ Clostridia UCG-014_                  |_Clostridia UCG-014_                   |_uncultured bacterium_             |No            |0.228               |0.035  |
-|ce7e172e3d64bc42dddb2f4aa26e3a03|Bacteria|Desulfobacterota|Desulfovibrionia|Desulfovibrionales|_Desulfovibrionaceae_                  |_Desulfovibrio_                        |_NA_                               |Yes           |0.329               |0.045  |
-|9b695df7c620cdc44eb078b53cef23de|Bacteria|Firmicutes      |Clostridia      |Oscillospirales   |_[Eubacterium] coprostanoligenes group_|_[Eubacterium] coprostanoligenes group_|_Eubacterium coprostanoligenes_    |Yes           |0.325               |0.015  |
-|8b7dd3e4e3f153a95c528f452b48a2bd|Bacteria|Bacteroidota    |Bacteroidia     |Bacteroidales     |_Rikenellaceae_                        |_Rikenellaceae RC9 gut group_          |_uncultured bacterium_             |Yes           |0.325               |0.015  |
-|dc04cb67b3295173275e20a8a7a3d16a|Bacteria|Bacteroidota    |Bacteroidia     |Flavobacteriales  |_Flavobacteriaceae_                    |_uncultured_                           |_gut metagenome_                   |Yes           |0.325               |0.015  |
+|54da3e844b42d39369127a368dcced1e|Bacteria|Firmicutes      |Bacilli         |RF39              |_RF39_                                 |_RF39_                                 |_human gut_                        |Yes           |0.380               |0.040    |
+|fdbdbe81dd5e0e2b71693fe87db9691d|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_Erysipelotrichaceae_                  |_Holdemanella_                         |_uncultured bacterium_             |Yes           |0.409               |0.045    |
+|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_ Erysipelatoclostridiaceae_           |_Catenibacterium_                      |_NA_                               |Yes           |0.398               |0.025    |
+|80dbd6cdd5798902a9038eb121f7f640|Bacteria|Firmicutes      |Clostridia      |Clostridia UCG-014|_ Clostridia UCG-014_                  |_Clostridia UCG-014_                   |_uncultured bacterium_             |No            |0.501               |0.030    |
+|ce7e172e3d64bc42dddb2f4aa26e3a03|Bacteria|Desulfobacterota|Desulfovibrionia|Desulfovibrionales|_Desulfovibrionaceae_                  |_Desulfovibrio_                        |_NA_                               |Yes           |0.553               |0.020    |
+|9b695df7c620cdc44eb078b53cef23de|Bacteria|Firmicutes      |Clostridia      |Oscillospirales   |_[Eubacterium] coprostanoligenes group_|_[Eubacterium] coprostanoligenes group_|_Eubacterium coprostanoligenes_    |Yes           |0.277               |0.040    |
+|8b7dd3e4e3f153a95c528f452b48a2bd|Bacteria|Bacteroidota    |Bacteroidia     |Bacteroidales     |_Rikenellaceae_                        |_Rikenellaceae RC9 gut group_          |_uncultured bacterium_             |Yes           |0.387               |0.045    |
+|dc04cb67b3295173275e20a8a7a3d16a|Bacteria|Bacteroidota    |Bacteroidia     |Flavobacteriales  |_Flavobacteriaceae_                    |_uncultured_                           |_gut metagenome_                   |Yes           |0.408               |0.040    |
 	File path to the .csv file containing this table: images and files/parkinsons/isa/isa_frame_high_FIXED.csv
 
-	Table of Model Taxa generated by merging the core microbiome and ISA performed on the filtered dataset:
-	
+	Table of Model Taxa generated by merging the core microbiome and ISA performed on the filtered dataset (annotated using NCBI BLAST and ordered by decreasing IV):
+|ASV code                        |Domain  |Phylum          |Class           |Order             |Family                                 |Genus                                  |Species                            |Lived on farm?|Indicator value (IV)|_p-value_|
+|--------------------------------|--------|----------------|----------------|------------------|---------------------------------------|---------------------------------------|-----------------------------------|--------------|--------------------|---------|
+|ce7e172e3d64bc42dddb2f4aa26e3a03|Bacteria|Desulfobacterota|Desulfovibrionia|Desulfovibrionales|_Desulfovibrionaceae_                  |_Desulfovibrio_                        |_NA_                               |Yes           |0.553               |0.020    |
+|fdbdbe81dd5e0e2b71693fe87db9691d|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_Erysipelotrichaceae_                  |_Holdemanella_                         |_uncultured bacterium_             |Yes           |0.409               |0.045    |
+|dc04cb67b3295173275e20a8a7a3d16a|Bacteria|Bacteroidota    |Bacteroidia     |Flavobacteriales  |_Flavobacteriaceae_                    |_uncultured_                           |_gut metagenome_                   |Yes           |0.408               |0.040    |
+|cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_ Erysipelatoclostridiaceae_           |_Catenibacterium_                      |_NA_                               |Yes           |0.398               |0.025    |
+	Path to the .csv file containing this table: images and files/parkinsons/core_isa/isa_core_farm_FIXED_annotated.csv
 
+Conclusion:<br>
+Filtering the phyloseq object to contain only the healhty individuals:
+- identified a higher number of species unique to the Farm group (core microbiome analysis)
+- identified a higher number of indicator taxa (ISA)
+- allowed to include more species with higher IVs as model taxa
 
+Compared to previous results, these improvements better demonstrate that our method can generate model taxa that are good predictors of exposure to a certain environment.
 
 ### Results from model validation of indicator ASVs on the Farm dataset:
 April 4, LR <br>

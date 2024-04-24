@@ -10,7 +10,7 @@ library(gridExtra)
 
 
 #Loading phyloseq object for healthy individuals
-load("phyloseqobject_parkinsons_rarefied.RData") #loaded as "healthy"
+load("phyloseqobject_parkinsons_rarefied.RData") #loaded as "phylobj_raref"
 
 #subset the healthy individuals
 healthy <- subset_samples(phylobj_raref, Disease == "Control")
@@ -23,17 +23,6 @@ healthyfarm #24 samples in healhtyfarm after rarefaction
 #Filtering for the healthy individuals who have not lived on a farm
 healthynonfarm <- subset_samples(healthy, Lived_on_farm == "No")
 healthynonfarm #64 samples in healthy nonfarm after rarefaction
-
-
-
-# Calculate Shannon with other method?????????
-#gg_shannon = ?estimate_richness(healthy, measures = "Shannon")
-#gg_richness <- ggplot(sample_data(healthy), aes(Lived_on_farm, gg_shannon)) + 
-#  xlab("Lived on a farm") +
- # labs(title= "Shannon's Diversity")+
- # geom_boxplot()
-
-
 
 
 

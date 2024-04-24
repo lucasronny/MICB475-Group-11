@@ -37,10 +37,10 @@ Procedure:
 - Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features. This was decided using the alpha rarefaction curve below, and using the QIIME2 online viewer.
 
 Quality score for each base in the sequence reads:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/filter_depth.png">
 
 Alpha rarefaction curve generated in R, for only healthy individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/rarefactioncurve.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/rarefaction/rarefactioncurve.jpg">
 
 Results after denoising and rarefaction:
 - 24 samples with YES-farm, NO-PD retained
@@ -66,10 +66,10 @@ The alpha and beta diversity plots can be seen below.
 None of the diversity metrics show significant difference in diversity when comparing the yes-farm and no-farm individuals
 
 Alpha Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/Diversity_plots/Alpha_Diversity_Plots.jpg">
 
 Beta Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Combined_Beta_Diversity_Plots_with_Legend.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/Diversity_plots/Combined_Beta_Diversity_Plots_with_Legend.png">
 
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)
@@ -114,10 +114,10 @@ Results:
 - the bar plot of the distribution of the identified ASVS
 	- overall, the 2 ASVs show a higher relative abundance in the unexposed group
 	- there is higher variability of the _Bacteroides_ genus in both the exposed and unexposed groups compared to the _Faecalibacterium_
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/core_ASVs_barplot(r.ab_0.01%2Cprev_0.5).png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)//core/core_ASVs_barplot(r.ab_0.01%2Cprev_0.5).png">
 
 - Venn diagram generated for the core microbiome analysis
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/venn_core(r.ab_0.01%2Cprev_0.5).png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/core/venn_core(r.ab_0.01%2Cprev_0.5).png">
 
 continued below: [Core Microbiome Analysis, continued](#Core-Microbiome-Analysis,-continued)
 
@@ -168,11 +168,11 @@ March 3, 2024, EG:
 Results:
 - there are 311 species in the exposed group's core microbiome, and 280 species in the unexposed group's core microbiome 
 - bar graph plot generated:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/core_ASVs_barplot(r.ab_0%2Cprev_0.1).png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/core/core_ASVs_barplot(r.ab_0%2Cprev_0.1).png">
 - there are more ASVs included in the current analysis because the parameters are less stringent
 
 - and the Venn diagram
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/venn_core(r.ab_0%2Cprev_0.1).png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/core/venn_core(r.ab_0%2Cprev_0.1).png">
 - overall, there are more ASVs included into the analysis with the less stringent parameters, consistent with the bar plot generated
 - the farm group has more unique species compared to the non-farm group, meaning that 
 
@@ -258,11 +258,35 @@ Bogota data collected by adding census results from both Bogota D.C. and Cundina
 ### Applying The Model to The Colombia Dataset
 March 13, KM
 
-<br>Purpose: To look for the model species in each city in the Colombia dataset to determine whether 
+<br>Purpose: To look for the model species in each city in the Colombia dataset to determine whether if these species exist in another dataset
 
 Procedure:
+- Loaded required phyloseq packages in R
+- Used previous code to build phyloseq object using the Colombia dataset
+- Created a loop that would go through a list of target ASVs to determine if ASVs were found in the colombia dataset
+- Loop determined if ASV was present then added to a counter to print out how many times the ASV was found
+- If ASV was not present, then it would print "ASV not found in dataset"
 
 Results:
+- No ASVs of our defined species were found in the colombia dataset
+- New loop went through all exisiting ASVs in each dataset and compared to find no in common ASVs between the two datasets
+- Misunderstanding that ASVs are unique to datasets made all code/methods above useless
+
+### Filtering Phyloseq Objects to Find Specific Species
+March 28, KM
+
+<br>Purpose: To re-work the initial purpose of the for loop to determine how many species of interests exist in our validation/test dataset
+
+Procedure:
+- Loaded required phyloseq packages in R
+- Used previous code to build phyloseq object of our test dataset
+- Wrote a vector including the specific names/filter depth of the species of interest 
+	- eg: c("o__Flavobacteriales", "f__Flavobacteriaceae", "g__uncultured")
+- Created a new filtered phyloseq object with subset_taxa of the name/filter of species of interest until the genus level
+- Print and save new taxa table with filtered species as CSV
+
+Results:
+- Code was able to successfully filter and find species of interests selected in the vector
 
 ### New Validation Dataset Processing in QIIME2 - Farm Dataset:
 March 23, EG <br>
@@ -293,7 +317,7 @@ Protocol:
 - repeat the analysis using previously written code (see sections on ISA and core microbiome analysis)
 - the new outputs generated in the analyses
 	Core Microbiome Analysis done on the newly filtered phyloseq object:
-	<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/core/venn_core(r.ab_0%2Cprev_0.1)_FIXED.png">
+	<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/core/venn_core(r.ab_0%2Cprev_0.1)_FIXED.png">
 	File path in the repository: images and files/parkinsons/core/venn_core(r.ab_0,prev_0.1)_FIXED.png_
 
 	Table of Indicator Taxa(generated by the ISA on the newly filtered phyloseq object), not annotated using NCBI BLAST:
@@ -319,12 +343,13 @@ Protocol:
 	Path to the .csv file containing this table: images and files/parkinsons/core_isa/isa_core_farm_FIXED_annotated.csv
 
 Conclusion:<br>
-Filtering the phyloseq object to contain only the healhty individuals:
+Filtering the phyloseq object to contain only the healthy individuals:
 - identified a higher number of species unique to the Farm group (core microbiome analysis)
 - identified a higher number of indicator taxa (ISA)
 - allowed to include more species with higher IVs as model taxa
 
 Compared to previous results, these improvements better demonstrate that our method can generate model taxa that are good predictors of exposure to a certain environment.
+
 
 ### Results from model validation of indicator ASVs on the Farm dataset:
 April 4, LR <br>
@@ -346,9 +371,9 @@ Results:
 
 
 Bubble plot including ASVs which appeared only once:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/Farm_new/Bubble_plot_sample_counts.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts.png">
 
 Bubble plot excluding ASVs which appeared only once:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/Farm_new/Bubble_plot_sample_counts_no_1s.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts_no_1s.png">
 
 

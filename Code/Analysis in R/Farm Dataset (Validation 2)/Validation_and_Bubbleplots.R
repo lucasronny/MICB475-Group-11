@@ -2,11 +2,6 @@
 library(phyloseq)
 library(tidyverse)
 library(ape)
-library(picante)
-library(ggpubr)
-library(ggplot2)
-library(gridExtra)
-library(readr)
 library(ggtext)
 library(glue)
 

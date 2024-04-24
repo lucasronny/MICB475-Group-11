@@ -261,6 +261,7 @@ March 13, KM
 <br>Purpose: To look for the model species in each city in the Colombia dataset to determine whether if these species exist in another dataset
 
 Procedure:
+- Loaded required phyloseq packages in R
 - Used previous code to build phyloseq object using the Colombia dataset
 - Created a loop that would go through a list of target ASVs to determine if ASVs were found in the colombia dataset
 - Loop determined if ASV was present then added to a counter to print out how many times the ASV was found
@@ -270,6 +271,22 @@ Results:
 - No ASVs of our defined species were found in the colombia dataset
 - New loop went through all exisiting ASVs in each dataset and compared to find no in common ASVs between the two datasets
 - Misunderstanding that ASVs are unique to datasets made all code/methods above useless
+
+### Filtering Phyloseq Objects to Find Specific Species
+March 28, KM
+
+<br>Purpose: To re-work the initial purpose of the for loop to determine how many species of interests exist in our validation/test dataset
+
+Procedure:
+- Loaded required phyloseq packages in R
+- Used previous code to build phyloseq object of our test dataset
+- Wrote a vector including the specific names/filter depth of the species of interest 
+	- eg: c("o__Flavobacteriales", "f__Flavobacteriaceae", "g__uncultured")
+- Created a new filtered phyloseq object with subset_taxa of the name/filter of species of interest until the genus level
+- Print and save new taxa table with filtered species as CSV
+
+Results:
+- Code was able to successfully filter and find species of interests selected in the vector
 
 ### New Validation Dataset Processing in QIIME2 - Farm Dataset:
 March 23, EG <br>
@@ -332,6 +349,7 @@ Filtering the phyloseq object to contain only the healthy individuals:
 - allowed to include more species with higher IVs as model taxa
 
 Compared to previous results, these improvements better demonstrate that our method can generate model taxa that are good predictors of exposure to a certain environment.
+
 
 ### Results from model validation of indicator ASVs on the Farm dataset:
 April 4, LR <br>

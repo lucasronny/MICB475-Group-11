@@ -1,12 +1,10 @@
 #Load in packages
 library(phyloseq)
 library(tidyverse)
-library(ape)
 library(picante)
-library(ggpubr)
 library(ggplot2)
 library(gridExtra)
-library(patchwork)
+library(vegan)
 
 
 

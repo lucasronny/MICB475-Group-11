@@ -37,7 +37,7 @@ Procedure:
 - Rarefaction depth of 8478 was chosen as the optimal rarefaction depth, retaining the highest number of samples while retaining most features. This was decided using the alpha rarefaction curve below, and using the QIIME2 online viewer.
 
 Quality score for each base in the sequence reads:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/filter_depth.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/filter_depth.png">
 
 Alpha rarefaction curve generated in R, for only healthy individuals:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/rarefactioncurve.jpg">

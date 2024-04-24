@@ -53,7 +53,7 @@ class(TAX)
 #Make final Phyloseq object
 phylobj <- phyloseq(OTU, META, TAX, tree)
 
-#Checking the object to make sure it's correct
+#Checking the phyloseq object to make sure it's correct
 otu_table(phylobj)
 sample_data(phylobj)
 tax_table(phylobj)
@@ -63,26 +63,19 @@ phy_tree(phylobj)
 #Generating rarefaction curve for all samples
 rarecurve(t(as.data.frame(otu_table(phylobj))), cex=0.0001)
 
-rm(list=ls())
 
 #Generating rarefaction curve for healthy individuals (non-PD)
 healthy <- subset_samples(phylobj, Disease == "Control")
 rarecurve(t(as.data.frame(otu_table(healthy))), cex=0.0005)
 
 
-
 #generating new phyloseq object which has been rarefied, cutoff decided from rarefaction curve above
 phylobj_raref <- rarefy_even_depth(phylobj, rngseed = 1, sample.size = 8478)
-
-?rarecurve()
 
 
 #Filtering for the healthy individuals
 healthy <- subset_samples(phylobj_raref, Disease == "Control")
 
-healthy
-
-#This should remove any NA's
 
 #Saving data
 save(phylobj, file="phyloseqobject_parkinsons.RData")

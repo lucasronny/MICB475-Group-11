@@ -40,7 +40,7 @@ Quality score for each base in the sequence reads:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/filter_depth.png">
 
 Alpha rarefaction curve generated in R, for only healthy individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/rarefaction/rarefactioncurve.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/rarefaction/rarefactioncurve.jpg">
 
 Results after denoising and rarefaction:
 - 24 samples with YES-farm, NO-PD retained
@@ -66,10 +66,10 @@ The alpha and beta diversity plots can be seen below.
 None of the diversity metrics show significant difference in diversity when comparing the yes-farm and no-farm individuals
 
 Alpha Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Alpha_Diversity_Plots.jpg">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/Diversity_plots/Alpha_Diversity_Plots.jpg">
 
 Beta Diversity Plots for the Farm vs Non-Farm individuals:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/Diversity_plots/Combined_Beta_Diversity_Plots_with_Legend.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/Diversity_plots/Combined_Beta_Diversity_Plots_with_Legend.png">
 
 
 ### Core Microbiome Analysis of the Farm dataset (healhty idividuals from the Parkinson's dataset)

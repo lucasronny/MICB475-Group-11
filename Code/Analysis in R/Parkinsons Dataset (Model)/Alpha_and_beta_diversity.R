@@ -22,7 +22,7 @@ healthyfarm #24 samples in healhtyfarm after rarefaction
 
 #Filtering for the healthy individuals who have not lived on a farm
 healthynonfarm <- subset_samples(healthy, Lived_on_farm == "No")
-healthynonfarm #64 samples in healthynonfarm after rarefaction
+healthynonfarm #64 samples in healthy nonfarm after rarefaction
 
 
 

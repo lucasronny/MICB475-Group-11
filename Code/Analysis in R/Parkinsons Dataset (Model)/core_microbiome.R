@@ -17,7 +17,7 @@ view(metadata)
 healthy <- subset_samples(phylobj, Disease == "Control")
 view(sample_data(healthy))
 
-#### "core" microbiome ####
+#### core microbiome ####
 
 # Convert otu table to relative abundance
 # this is done because the analyses work with the relative, not absolute, abundance
@@ -31,10 +31,11 @@ parkinsons_farm <- subset_samples(parkinsons_RA, `Lived_on_farm`=="Yes")
 parkinsons_nofarm <- subset_samples(parkinsons_RA, `Lived_on_farm`=="No")
 
 # What ASVs are found in more than 70% of samples in each exposure category?
-# trying changing the prevalence to see what happens
-# detection = 0 means that no matter how abundant it is within the group, include it
-# prevalence = 0.7 is HIGH - include only if present in over 70% samples
+farm_list <- core_members(parkinsons_farm, detection=0.001, prevalence = 0.10)
+nofarm_list <- core_members(parkinsons_nofarm, detection=0.001, prevalence = 0.10)
+#very few taxa generated
 
+# trying changing the prevalence to attempt increasing the number of core microbiome taxa
 farm_ASVs <- core_members(parkinsons_farm, detection=0, prevalence = 0.1)
 nofarm_ASVs <- core_members(parkinsons_nofarm, detection=0, prevalence = 0.1)
 
@@ -64,12 +65,12 @@ exposure_list_core <- list(Farm = farm_ASVs, No_Farm = nofarm_ASVs)
 # Create a Venn diagram using all the ASVs shared and unique to antibiotic users and non users
 core_venn <- ggVennDiagram(x = exposure_list_core) + coord_flip() +
   labs(title = "Total Count of Shared and Unique ASVs Per Group",  # Modify the title
-  x = "Group",                                     # Modify the x-axis label
-  y = "Count",                                     # Modify the y-axis label
-  fill = "Count") +                                # Modify the legend label
-  theme(plot.title = element_text(hjust = 0)) +  # Center the title
-  theme(plot.title = element_text(size = 30),      # Increase title font size
-        text = element_text(size = 25))            # Increase label font size
+  x = "Group",                                     # lines 68-73: formatting
+  y = "Count",                                     
+  fill = "Count") +                                
+  theme(plot.title = element_text(hjust = 0)) +  
+  theme(plot.title = element_text(size = 30),      
+        text = element_text(size = 25))            
 
 ggsave("venn_core(r.ab_0,prev_0.1)_FIXED.png", core_venn, height = 7, width = 10)
 
@@ -92,17 +93,3 @@ for (r in 1:nrow(farm_ASV_core_df)) {
 view(farm_ASV_unique_df)
 
 save(farm_ASV_unique_df, file = "farm_ASV_unique_df_FIXED.RData")
-
-
-######### IGNORE ###############
-# Create a Venn diagram of all species
-farm_list <- core_members(parkinsons_farm, detection=0.001, prevalence = 0.10)
-nofarm_list <- core_members(parkinsons_nofarm, detection=0.001, prevalence = 0.10)
-
-# combine the vectors above into a list for ease of coding later on
-exposure_list_full <- list(Farm1 = farm_list, No_Farm1 = nofarm_list)
-
-# Create a Venn diagram using all the ASVs shared and unique to antibiotic users and non users
-all_venn <- ggVennDiagram(x = exposure_list_full) + coord_flip()
-
-ggsave("venn_antibiotic.png", first_venn)

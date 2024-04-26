@@ -20,12 +20,4 @@ view(isa_core_farm)
 
 write.csv(isa_core_farm, "isa_core_farm_FIXED.csv", row.names = FALSE)
 
-# generated 4 species, all p < 0.05 and IV > 0.39
-
-#### IGNORE (done above) ###########
-#Combine core microbiome species unique to the farm group and indicator species
-
-load("farm_ASV_unique_df.RData")
-isa_core_farm_unique <- inner_join(isa_frame, farm_ASV_unique_df, by = "ASV")
-view(isa_core_farm_unique)
-# 2 species identified!
+# generated 4 species, all p < 0.05

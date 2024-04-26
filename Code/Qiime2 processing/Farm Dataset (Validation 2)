@@ -2,20 +2,6 @@ Validation Dataset 2
 
 # log in to the shared server
 
-
-# import and demultiplex sequences
-qiime tools import \
-   --type EMPPairedEndSequences \
-   --input-path /mnt/datasets/project_2/farm/farm_seqs \
-   --output-path emp-paired-end-sequences.qza
-
-# problem with importing paired end seqs, try single end
-qiime tools import \
-   --type EMPSingleEndSequences \
-   --input-path mnt/datasets/project_2/farmfarm_seqs \
-   --output-path emp-single-end-sequences.qza
-
-# using sequences import is not supported for large datasets, use the manifest.tsv file!
 # use manifest file to import single end sequences
 qiime tools import \
   --type "SampleData[SequencesWithQuality]" \
@@ -24,12 +10,12 @@ qiime tools import \
   --output-path demux_seqs.qza
 
 # copy file demux.qzv file into local storage for viewing
-scp root@10.19.139.142:/data/new_farm/demux.qzv C:\Users\kilev\Desktop\MICB475-Group-11
+scp root@[server ID]:[file path on the server] [file path on local computer]
 
 
 # DENOISE
 # use Dada2
-# using the Phred Quality Score (demux.qzv)
+# use the Phred Quality Score (demux.qzv)
 qiime dada2 denoise-single \
   --i-demultiplexed-seqs demux_seqs.qza \
   --p-trim-left 0 \
@@ -48,14 +34,14 @@ qiime feature-table summarize \
   --i-table table.qza \
   --o-visualization table.qzv \
   --m-sample-metadata-file /mnt/datasets/project_2/farm/farm_metadata.tsv
-  
+
+# Convert rep-seqs.qza to a viewable file
 qiime feature-table tabulate-seqs \
   --i-data rep-seqs.qza \
   --o-visualization rep-seqs.qzv
 
 # copy the table.qzv file into local storage for viewing
-scp root@10.19.139.142:/data/new_farm/table.qzv C:\Users\kilev\Desktop\MICB475-Group-11
-scp root@10.19.139.142:/data/new_farm/rep-seqs.qzv C:\Users\kilev\Desktop\MICB475-Group-11
+scp root@[server ID]:[file path on the server] [file path on local computer]
 
 
 # TAXONOMIC ANALYSIS
@@ -121,8 +107,4 @@ biom convert \
 
 # copy the mpt_export directory to the local computer
 # but move into the right directory first
-scp -r root@10.19.139.142:~/data/new_farm/farm_export .
-
-cd C:\Users\kilev\Desktop\MICB475_R
-
-scp root@10.19.139.142:/mnt/datasets/project_2/farm/farm_metadata.tsv .
+scp -r root@[server ID]:~[file path on the server] .

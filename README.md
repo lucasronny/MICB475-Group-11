@@ -392,4 +392,4 @@ Bubble plot including ASVs which appeared only once:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts.png">
 
 Bubble plot excluding ASVs which appeared only once:
-<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts_no_1s.png">
+<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts_no_1ss.png">

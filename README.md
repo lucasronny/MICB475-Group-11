@@ -134,7 +134,6 @@ February 29, 2024, EG <br>
 __Purpose:__ The indicator species analysis will allow to identify any taxa that are indicators of the Farm and No-farm group. This is the analysis that is performed regularly in the field to identify taxa that are commonly found in a specific environment. In our method, the results for the group of interst are checked against the core microbiome-identified taxa unique to the Farm group. 
 
 __Protocol:__
-
 - packages required: tidyverse, phyloseq, indicspecies
 - load the non-rarefied phyloseq object for the Farm dataset
 - glom the tax table to Genus, make sure to include the NA rows
@@ -167,6 +166,7 @@ The following list of ASVs was generated in the ISA:
 
 continued below: [Indicator Species Analysis, continued](#Indicator-species-analysis.+continued)
 
+
 ### Core Microbiome Analysis, continued
 March 3, 2024, EG:
 
@@ -185,6 +185,7 @@ __Results:__
 - overall, there are more ASVs included into the analysis with the less stringent parameters, consistent with the bar plot generated
 - the farm group has more unique species compared to the non-farm group, meaning that 
 
+
 ### Indicator Species Analysis, continued
 February 29, EG
 
@@ -199,6 +200,7 @@ __Results:__
 - 19 indicator species were identified
 - 12 ASVs were subsetted given the parameters above
 - see this [file](https://github.com/lucasronny/MICB475-Group-11/blob/main/images%20and%20files/parkinsons/isa/isa_frame_high1.csv) for tables listing the taxonomic classification of ASVs performed using the representative sequences in QIIME2 and NIH BLAST &reg; tool classification
+
 
 ### Core Microbiome and Indicator Species Analysis: Combining Results to Identify Species for the Predictive Model
 March 4, EG
@@ -230,7 +232,8 @@ __Conclusion:__
 - only the species for the __2 bolded ASVs will be used as the species for the model__
 	- this makes for a rather weak model, considering there are only 2 species and the indicator values are quite low
 
- ### Ranking Cities by Agricultural Exposure to Predict Which Will Be Identified as "Farming Populations" by The Predictive Model
+
+### Ranking Cities by Agricultural Exposure to Predict Which Will Be Identified as "Farming Populations" by The Predictive Model
 March 13, ANM, LW
 
 <br> __Purpose:__ To build a hypothesis to use in testing our model. Before looking for the model species in the Colombian population (grouped by city), we propose which cities are more or less likely to be identified as agricultural communities by our model. We will calculate the proportion of all workers tht are involved in agricultural activities. The highest rankings will be given to the cities which we believe to be likely agricultural communities, the lower ranking will be given to the species that are the least likely.
@@ -241,7 +244,6 @@ __Procedure:__
 - Using the Census we looked and the data for Land Cover (the amount of land in hectares that is used for agricultural activities in a specific Department). Then we looked and the tables covering the amount of agricultural workers for each Department.
 - The total amount of hectares in land cover and the total amount of workers respectively, were used to calculate the proportion of Agricultural land and workers for each Department.
 - City ranking made by looking at the proportion results.
-
 
 __Results:__
 | City        | Associated Department| Land Cover| Proportion of Agricultural Land| Total Workers| Proportion of workers|
@@ -280,6 +282,7 @@ __Results:__
 - New loop went through all exisiting ASVs in each dataset and compared to find no in common ASVs between the two datasets
 - Misunderstanding that ASVs are unique to datasets made all results above invalid
 
+
 ### Filtering Phyloseq Objects to Find Specific Species
 March 28, KM
 
@@ -292,9 +295,11 @@ __Procedure:__
 	- eg: c("o__Flavobacteriales", "f__Flavobacteriaceae", "g__uncultured")
 - Created a new filtered phyloseq object with subset_taxa of the name/filter of species of interest until the genus level
 - Print and save new taxa table with filtered species as CSV
+- R packages needed: tidyverse, phyloseq
 
 __Results:__
 - Code was able to successfully filter and find species of interests selected in the vector
+
 
 ### New Validation Dataset Processing in QIIME2 - Farm Dataset:
 March 23, EG <br>
@@ -315,16 +320,20 @@ __Procedure:__
 __Results:__
 - the files generated are stored in the individual server and on a local computer
 - the quality score for every base pair in the sequence is as follows:
+<br> < img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Farm%20Dataset%20(Validation%202)/demux_quality_scores.png">
 
 
 ### EDIT: Core microbiome analysis, ISA, and reconciliation
 April 4th, EG <br>
 
-__Purpose:__ While the analyses above were performed correctly (see core microbiome, ISA, and reconciliation sections above), the team missed the fact that the phyloseq object used for those analysis was not propoerly filtered. The object included samples from Parkinson's disease patients, whereas we aimed to include samples only from healhty individuals who lived on farms. This distinction is importnat because we selected 2 variables as examples for our journey on method development for building a taxonomic predictive model: gut microbiome composition and agricultural exposure. Therefore, the effect of Parkinson's disease would be a third variable, and this is outside the aims of our project. Consequently, we need to control for the overall health state of the included samples by including only healthy subjects.
+__Purpose:__ While the analyses above were performed correctly (see core microbiome, ISA, and reconciliation sections above), the team missed the fact that the phyloseq object used for those analysis was not propoerly filtered. The object included samples from Parkinson's disease patients, whereas we aimed to include samples only from healhty individuals who lived on farms. The effect of Parkinson's disease would be a third variable which we do not want to account for. Consequently, we need to control for the overall health state of the included samples by including only healthy subjects.
 
 __Protocol:__
 - in the code for ISA and core microbiome analysis, include a function to filter the phyloseq object to make it contain only samples with "Control" output in the Disease metadata column
 - repeat the analysis using previously written code (see sections on ISA and core microbiome analysis)
+- packages needed: tidyverse and phyloseq (for both core and ISA), indicspecies (ISA), microbiome (core)
+
+__Results:__
 - the new outputs generated in the analyses
 	Core Microbiome Analysis done on the newly filtered phyloseq object:
 	<br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Parkinsons Dataset (Model)/core/venn_core(r.ab_0%2Cprev_0.1)_FIXED.png">
@@ -371,13 +380,13 @@ __Procedure:__
 - Remove non-farmers (Americans) from the dataset, only keeping Nepalese farmers
 - Scan through Farm dataset for the presence and abundance of each indicator ASV
 - A bubble plot was generated, displaying total ASV abundance as the color of each bubble, and the percentage prevalence is shown as the bubble size.
+- the packages needed for this analysis: tidyverse, phyloseq, ape
 
 __Results:__
 - Some ASVs were only present in one sample, and were thus removed from the figure. This can be seen in comparing the two figures below.
-- Catenibacterium mitsuokai ASV 1 and Holdemanellea biformis ASV 2 were present in >70% of samples.
-- Holdemanellea biformis ASV 1 was only present in 35% of samples.
-- Desulfovibrio piger was present in 48% of samples.
-
+- _Catenibacterium mitsuokai_ ASV 1 and _Holdemanellea biformis_ ASV 2 were present in >70% of samples.
+- _Holdemanellea biformis_ ASV 1 was only present in 35% of samples.
+- _Desulfovibrio piger_ was present in 48% of samples.
 
 Bubble plot including ASVs which appeared only once:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts.png">
@@ -386,3 +395,16 @@ Bubble plot excluding ASVs which appeared only once:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts_no_1s.png">
 
 
+### Model validation: Correctino of the filtering for the Farm dataset changes the data slightly
+April 15, LR
+
+__Purpose:__ The previous validatino was done on the entire dataset (the North American populations were not excluded by accident). This repeated analysis is performed on only the Himalayan samples.
+
+__Procedure:__
+- perfrom the same analysis, but include a function in the code to exclude all the USA citizens' samples from consideration (effectively filter the phyloseq object to exclude the mentioned samples)
+- the packages needed for this analysis: tidyverse, phyloseq, ape
+
+__Results:__
+- multiple ASVs were considered per species
+
+The bubble plot with the new ASVs

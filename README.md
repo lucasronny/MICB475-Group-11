@@ -325,7 +325,7 @@ __Results:__
 
 ### New Validation Dataset Phyloseq Object
 March 24th, AN  <br>
-__Purpose:__  To take the QIIME2 data processing files for the new validation dataset and convert them into a phyloseq object to find our indicator species.
+__Purpose:__  To take the QIIME2 data processing files for the new validation dataset and convert them into a phyloseq object to find our indicator species.  <br>
 __Protocol:__ 
 - Loaded necessary packages: phyloseq, ape, tidyverse and vegan.
 - Loaded metadata, feature_table, taxonomy and phylogenetic tree produced from Qiime processing of the New Farm dataset.

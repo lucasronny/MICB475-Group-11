@@ -393,18 +393,3 @@ Bubble plot including ASVs which appeared only once:
 
 Bubble plot excluding ASVs which appeared only once:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images and files/Farm Dataset (Validation 2)/Bubble_plot_sample_counts_no_1s.png">
-
-
-### Model validation: Correctino of the filtering for the Farm dataset changes the data slightly
-April 15, LR
-
-__Purpose:__ The previous validatino was done on the entire dataset (the North American populations were not excluded by accident). This repeated analysis is performed on only the Himalayan samples.
-
-__Procedure:__
-- perfrom the same analysis, but include a function in the code to exclude all the USA citizens' samples from consideration (effectively filter the phyloseq object to exclude the mentioned samples)
-- the packages needed for this analysis: tidyverse, phyloseq, ape
-
-__Results:__
-- multiple ASVs were considered per species
-
-The bubble plot with the new ASVs

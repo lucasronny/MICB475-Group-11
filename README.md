@@ -324,7 +324,7 @@ __Results:__
 <br> < img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Farm%20Dataset%20(Validation%202)/demux_quality_scores.png">
 
 ### New Validation Dataset Phyloseq Object
-March 24th, AN 
+March 24th, AN  <br>
 __Purpose:__  To take the QIIME2 data processing files for the new validation dataset and convert them into a phyloseq object to find our indicator species.
 __Protocol:__ 
 - Loaded necessary packages: phyloseq, ape, tidyverse and vegan.

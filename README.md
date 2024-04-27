@@ -65,6 +65,7 @@ __Procedure:__
 	- Use the distance() and ordinate() functions to generate beta diversity PCoA plots of the following metrics:
  		- Bray Curtis, Unifrac, Weighted Unifrac and Jaccard metrics
 - R packages used: tidyverse, phyloseq, vegan, picante
+- Calculate significance using the mann-whitney U test for Alpha diversity, and the PERMANOVA test for the Beta diversity
 
 __Results:__
 The alpha and beta diversity plots can be seen below.

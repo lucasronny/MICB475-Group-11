@@ -55,7 +55,6 @@ phy_tree(newfarm_phyloseq1)
 # removing samples from American non-farmers
 newfarm_phyloseq <- subset_samples(newfarm_phyloseq1, Country == "Nepal")
 
-
 ########## New Farm ASV counts ################
 
 #Import dataset with target ASVs and annotated species
@@ -155,6 +154,7 @@ total_sampcounts_df <- mutate(total_sampcounts_df, Count = (Count/a))
 
 #Making the abundance counts fit the same ASVs as the prevalence counts
 total_counts_df <- filter(total_counts_df, Species %in% total_sampcounts_df$Species)
+total_counts_df <- mutate(total_counts_df, Count = round(Count/sum(otu_table(newfarm_phyloseq)), 5))
 
 #subsetting genus and species to format itallics (Redundant code but has to stay for rest of code to work)
 total_sampcounts_df$Genus <- gsub("^(\\S+)\\s.*", "\\1", total_sampcounts_df$Species)
@@ -172,14 +172,13 @@ bub_samp_plot <- ggplot(total_sampcounts_df,
                         aes(x = 0, y = name, size = Count, fill=total_counts_df$Count)) +
   geom_point(shape = 21, color = "black") +
   geom_text(data = total_sampcounts_df, 
-            aes(label = total_counts_df$Count), 
+            aes(label = paste(100*total_counts_df$Count,"%")),  # times 100 for percentages
             size = total_sampcounts_df$Count * 10.15)+
   xlim(-0.5, 0.5)+
-  #annotate("text", label=total_counts_df$Count[4], x=0.2, y="Uncultured Flavobacteriaceae", size=5)+
-  scale_fill_gradient(low = "#F1F1F1", high = "#929191", name = "Total ASV abundance") +  # Add legend for fill color and change color
+  scale_fill_gradient(low = "#F1F1F1", high = "#929191", name = "% ASV abundance", labels = scales::percent_format()) +  # Add legend for fill color and change color
   scale_size_continuous(range = c(70*min(total_sampcounts_df$Count), 70*max(total_sampcounts_df$Count)), breaks=c(min(total_sampcounts_df$Count), 0.5, max(total_sampcounts_df$Count)), 
                         labels = scales::percent_format()) +  # Adjust the range of bubble sizes
-  labs(x = "", y = "Taxa", size = "% of Samples with ASV", fill="Total ASV counts in dataset")+
+  labs(x = "", y = "", size = "% of Samples with ASV", fill="Total ASV counts in dataset")+
   theme_bw()+
   theme(plot.title = element_text(hjust = 0.5),
         axis.text.y = element_text(face = "italic"))+
@@ -189,5 +188,6 @@ bub_samp_plot <- ggplot(total_sampcounts_df,
 
 
 
+#Save image
 ggsave("Bubble_plot_sample_counts_no_1s.png", bub_samp_plot, width=8, height= 8, units="in", dpi=1000 )
 

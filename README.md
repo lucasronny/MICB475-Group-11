@@ -300,7 +300,7 @@ __Procedure:__
 
 __Results:__
 - Code was able to successfully filter and find species of interests selected in the vector
-- [R Script here]((https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/Analysis%20in%20R/Farm%20Dataset%20(Validation%202)/New_Farm_Phylo_Filter.R))
+- [R Script here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/Analysis%20in%20R/Farm%20Dataset%20(Validation%202)/New_Farm_Phylo_Filter.R)
 
 
 ### New Validation Dataset Processing in QIIME2 - Farm Dataset:

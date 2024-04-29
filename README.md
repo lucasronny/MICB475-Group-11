@@ -364,7 +364,8 @@ __Results:__
 |9b695df7c620cdc44eb078b53cef23de|Bacteria|Firmicutes      |Clostridia      |Oscillospirales   |_[Eubacterium] coprostanoligenes group_|_[Eubacterium] coprostanoligenes group_|_Eubacterium coprostanoligenes_    |Farm        |0.277               |0.040    |
 |8b7dd3e4e3f153a95c528f452b48a2bd|Bacteria|Bacteroidota    |Bacteroidia     |Bacteroidales     |_Rikenellaceae_                        |_Rikenellaceae RC9 gut group_          |_uncultured bacterium_             |Farm        |0.387               |0.045    |
 |dc04cb67b3295173275e20a8a7a3d16a|Bacteria|Bacteroidota    |Bacteroidia     |Flavobacteriales  |_Flavobacteriaceae_                    |_uncultured_                           |_gut metagenome_                   |Farm        |0.408               |0.040    |
-	<br> See the corresponding .csv file [here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Parkinsons%20Dataset%20(Model)/isa/isa_frame_high_FIXED.csv).
+
+See the corresponding .csv file [here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Parkinsons%20Dataset%20(Model)/isa/isa_frame_high_FIXED.csv).
 
 	Following the filtering of these indicator taxa to find only those unique to the Farm group (using the subset of 53 species identified in core microbiome analysis), the following Model Taxa were generated. They were blasted using the NIH BLAST&reg; tool for downstream applications:
 	
@@ -374,7 +375,8 @@ __Results:__
 |fdbdbe81dd5e0e2b71693fe87db9691d|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_Erysipelotrichaceae_      |_Holdemanella_   |_Holdemanella biformis_    |Farm        |0.409               |0.045    |
 |dc04cb67b3295173275e20a8a7a3d16a|Bacteria|Bacteroidota    |Bacteroidia     |Flavobacteriales  |_Flavobacteriaceae_        |_uncultured_     |_uncultured_               |Farm        |0.408               |0.040    |
 |cbd66fa79a3e7fa1c33d29ed908de048|Bacteria|Firmicutes      |Bacilli         |Erysipelotrichales|_Erysipelatoclostridiaceae_|_Catenibacterium_|_Catenibacterium mitsuokai_|Farm        |0.398               |0.025    |
-	<br> See the corresponding .csv file [here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Parkinsons%20Dataset%20(Model)/core_isa/isa_core_farm_FIXED_annotated.csv).
+
+See the corresponding .csv file [here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Parkinsons%20Dataset%20(Model)/core_isa/isa_core_farm_FIXED_annotated.csv).
 
 
 __Conclusion:__ <br>

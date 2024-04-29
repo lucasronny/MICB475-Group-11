@@ -367,7 +367,7 @@ __Results:__
 
 See the corresponding .csv file [here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Parkinsons%20Dataset%20(Model)/isa/isa_frame_high_FIXED.csv).
 
-	Following the filtering of these indicator taxa to find only those unique to the Farm group (using the subset of 53 species identified in core microbiome analysis), the following Model Taxa were generated. They were blasted using the NIH BLAST&reg; tool for downstream applications:
+Following the filtering of these indicator taxa to find only those unique to the Farm group (using the subset of 53 species identified in core microbiome analysis), the following Model Taxa were generated. They were blasted using the NIH BLAST&reg; tool for downstream applications:
 	
 |ASV code                        |Domain  |Phylum          |Class           |Order             |Family                     |Genus            |Species                    |Indicator of|Indicator value (IV)|_p-value_|
 |--------------------------------|--------|----------------|----------------|------------------|---------------------------|-----------------|---------------------------|------------|--------------------|---------|

@@ -300,6 +300,7 @@ __Procedure:__
 
 __Results:__
 - Code was able to successfully filter and find species of interests selected in the vector
+- [R Script here](https://github.com/lucasronny/MICB475-Group-11/blob/main/Code/Analysis%20in%20R/Farm%20Dataset%20(Validation%202)/New_Farm_Phylo_Filter.R)
 
 
 ### New Validation Dataset Processing in QIIME2 - Farm Dataset:
@@ -323,6 +324,17 @@ __Results:__
 - the quality score for every base pair in the sequence is as follows:
 <br><img src = "https://github.com/lucasronny/MICB475-Group-11/blob/main/Images%20and%20files/Farm%20Dataset%20(Validation%202)/demux_quality_scores.png">
 
+### New Validation Dataset Phyloseq Object
+March 24th, AN  <br>
+__Purpose:__  To take the QIIME2 data processing files for the new validation dataset and convert them into a phyloseq object to find our indicator species.  <br>
+__Protocol:__ 
+- Loaded necessary packages: phyloseq, ape, tidyverse and vegan.
+- Loaded metadata, feature_table, taxonomy and phylogenetic tree produced from Qiime processing of the New Farm dataset.
+- Adjusted metadata, table and taxonomy to phyloseq format.
+
+__Results__ 
+- Code succesfully generated phyloseq object.
+- The file generated was exported to GitHub to continue with the validation of the model.
 
 ### EDIT: Core microbiome analysis, ISA, and reconciliation
 April 4th, EG <br>
